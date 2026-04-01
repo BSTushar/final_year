@@ -1,0 +1,1111 @@
+path,text
+data/raw/utt001.wav,hello how are you doing today
+data/raw/utt002.wav,this is my final year project
+data/raw/utt003.wav,speech recognition using cnn lstm
+data/raw/utt004.wav,good morning everyone
+data/raw/utt005.wav,thank you for listening
+data/raw/utt006.wav,this project converts speech into text
+data/raw/utt007.wav,deep learning is used for speech recognition
+data/raw/utt008.wav,the model is trained using audio samples
+data/raw/utt009.wav,this system works in real time
+data/raw/utt010.wav,the application is user friendly
+data/raw/utt011.wav,speech to text is an important technology
+data/raw/utt012.wav,cnn extracts important features from audio
+data/raw/utt013.wav,lstm captures temporal dependencies
+data/raw/utt014.wav,this project follows a modular design
+data/raw/utt015.wav,the dataset contains multiple audio files
+data/raw/utt016.wav,the audio is sampled at sixteen kilohertz
+data/raw/utt017.wav,training is done using labeled data
+data/raw/utt018.wav,the system generates accurate transcriptions
+data/raw/utt019.wav,this approach is efficient and reliable
+data/raw/utt020.wav,the project is implemented using python
+data/raw/utt021.wav,the model is trained on clean speech data
+data/raw/utt022.wav,feature extraction uses log mel spectrograms
+data/raw/utt023.wav,cnn layers learn spatial features
+data/raw/utt024.wav,lstm layers learn sequential patterns
+data/raw/utt025.wav,ctc loss is used for training
+data/raw/utt026.wav,the output is generated as text
+data/raw/utt027.wav,the system supports live microphone input
+data/raw/utt028.wav,this demo shows real time transcription
+data/raw/utt029.wav,the results are displayed on the website
+data/raw/utt030.wav,the project meets vtu requirements
+data/raw/utt031.wav,this is an industry oriented project
+data/raw/utt032.wav,the system is easy to use
+data/raw/utt033.wav,the application runs on cpu
+data/raw/utt034.wav,the training process is stable
+data/raw/utt035.wav,the dataset size is limited
+data/raw/utt036.wav,the accuracy is satisfactory
+data/raw/utt037.wav,the project demonstrates feasibility
+data/raw/utt038.wav,this model generalizes to new sentences
+data/raw/utt039.wav,the system handles unseen inputs
+data/raw/utt040.wav,the output text is readable
+data/raw/utt041.wav,the audio data is preprocessed
+data/raw/utt042.wav,noise reduction improves performance
+data/raw/utt043.wav,the project uses supervised learning
+data/raw/utt044.wav,the system is evaluated using metrics
+data/raw/utt045.wav,word error rate is calculated
+data/raw/utt046.wav,character error rate is analyzed
+data/raw/utt047.wav,the graphs show training performance
+data/raw/utt048.wav,the loss decreases over epochs
+data/raw/utt049.wav,the accuracy increases gradually
+data/raw/utt050.wav,the final model is saved
+data/raw/utt051.wav,the website provides a clean interface
+data/raw/utt052.wav,the user can record audio
+data/raw/utt053.wav,the audio is processed automatically
+data/raw/utt054.wav,the transcription is shown instantly
+data/raw/utt055.wav,this project focuses on simplicity
+data/raw/utt056.wav,the code is modular and reusable
+data/raw/utt057.wav,the system avoids heavy models
+data/raw/utt058.wav,this improves training speed
+data/raw/utt059.wav,the approach is cpu friendly
+data/raw/utt060.wav,the demo runs smoothly
+data/raw/utt061.wav,the project is suitable for students
+data/raw/utt062.wav,this work is done as part of academics
+data/raw/utt063.wav,the methodology follows standard steps
+data/raw/utt064.wav,data collection is done carefully
+data/raw/utt065.wav,the preprocessing step is important
+data/raw/utt066.wav,the model is trained offline
+data/raw/utt067.wav,the inference works online
+data/raw/utt068.wav,this ensures real time performance
+data/raw/utt069.wav,the system is robust
+data/raw/utt070.wav,the output quality is acceptable
+data/raw/utt071.wav,the project can be extended further
+data/raw/utt072.wav,future work includes noise handling
+data/raw/utt073.wav,the dataset can be expanded
+data/raw/utt074.wav,more speakers can be added
+data/raw/utt075.wav,the accuracy can be improved
+data/raw/utt076.wav,the system supports english language
+data/raw/utt077.wav,this demo shows speech recognition
+data/raw/utt078.wav,the user experience is smooth
+data/raw/utt079.wav,the interface is simple
+data/raw/utt080.wav,the results are encouraging
+data/raw/utt081.wav,the project demonstrates deep learning
+data/raw/utt082.wav,the cnn lstm architecture is effective
+data/raw/utt083.wav,the system processes audio signals
+data/raw/utt084.wav,the model outputs text sequences
+data/raw/utt085.wav,the approach is widely used
+data/raw/utt086.wav,this method is well documented
+data/raw/utt087.wav,the training data is labeled
+data/raw/utt088.wav,the evaluation is systematic
+data/raw/utt089.wav,the model performs consistently
+data/raw/utt090.wav,the demo is reliable
+data/raw/utt091.wav,this project was developed carefully
+data/raw/utt092.wav,the system follows best practices
+data/raw/utt093.wav,the design is scalable
+data/raw/utt094.wav,the application is flexible
+data/raw/utt095.wav,the model handles variability
+data/raw/utt096.wav,the speech is converted to text
+data/raw/utt097.wav,the output is displayed clearly
+data/raw/utt098.wav,the results match expectations
+data/raw/utt099.wav,the system is functional
+data/raw/utt100.wav,the demo is successful
+data/raw/utt101.wav,this is a sample training sentence
+data/raw/utt102.wav,this line is used for speech training
+data/raw/utt103.wav,the model learns speech patterns
+data/raw/utt104.wav,the system recognizes spoken words
+data/raw/utt105.wav,the transcription is accurate
+data/raw/utt106.wav,the project is easy to explain
+data/raw/utt107.wav,the demo is easy to perform
+data/raw/utt108.wav,the output is meaningful
+data/raw/utt109.wav,the system is stable
+data/raw/utt110.wav,the project is complete
+data/raw/utt111.wav,the user can test different sentences
+data/raw/utt112.wav,the model supports unseen inputs
+data/raw/utt113.wav,the speech rate can vary
+data/raw/utt114.wav,the model adapts to changes
+data/raw/utt115.wav,the accuracy remains reasonable
+data/raw/utt116.wav,the system is not hardcoded
+data/raw/utt117.wav,the output depends on input speech
+data/raw/utt118.wav,the model generalizes well
+data/raw/utt119.wav,the demo shows this clearly
+data/raw/utt120.wav,the project fulfills objectives
+data/raw/utt121.wav,the model is trained using pytorch
+data/raw/utt122.wav,torchaudio is used for audio processing
+data/raw/utt123.wav,the loss function is ctc
+data/raw/utt124.wav,the optimizer is adam
+data/raw/utt125.wav,the learning rate is fixed
+data/raw/utt126.wav,the training converges smoothly
+data/raw/utt127.wav,the validation loss is monitored
+data/raw/utt128.wav,the best model is saved
+data/raw/utt129.wav,the results are reproducible
+data/raw/utt130.wav,the system is dependable
+data/raw/utt131.wav,the website shows all results
+data/raw/utt132.wav,the graphs are pre generated
+data/raw/utt133.wav,the architecture is visualized
+data/raw/utt134.wav,the data flow is explained
+data/raw/utt135.wav,the project structure is clear
+data/raw/utt136.wav,the documentation is complete
+data/raw/utt137.wav,the system meets expectations
+data/raw/utt138.wav,the demo is examiner friendly
+data/raw/utt139.wav,the project is well prepared
+data/raw/utt140.wav,the presentation is clear
+data/raw/utt141.wav,the model processes speech signals
+data/raw/utt142.wav,the system recognizes english speech
+data/raw/utt143.wav,the transcription is readable
+data/raw/utt144.wav,the project is technically sound
+data/raw/utt145.wav,the approach is practical
+data/raw/utt146.wav,the system avoids complexity
+data/raw/utt147.wav,the demo works reliably
+data/raw/utt148.wav,the model is lightweight
+data/raw/utt149.wav,the inference is fast
+data/raw/utt150.wav,the output is generated quickly
+data/raw/utt151.wav,the project demonstrates learning
+data/raw/utt152.wav,the system is built from scratch
+data/raw/utt153.wav,the code is easy to maintain
+data/raw/utt154.wav,the architecture is well designed
+data/raw/utt155.wav,the training process is controlled
+data/raw/utt156.wav,the dataset is organized
+data/raw/utt157.wav,the files are properly managed
+data/raw/utt158.wav,the project uses standard tools
+data/raw/utt159.wav,the system is reproducible
+data/raw/utt160.wav,the demo is smooth
+data/raw/utt161.wav,the model converts voice to text
+data/raw/utt162.wav,the speech input is processed
+data/raw/utt163.wav,the text output is displayed
+data/raw/utt164.wav,the project is implemented correctly
+data/raw/utt165.wav,the approach is efficient
+data/raw/utt166.wav,the results are consistent
+data/raw/utt167.wav,the system is reliable
+data/raw/utt168.wav,the demo is successful
+data/raw/utt169.wav,the project is complete
+data/raw/utt170.wav,the evaluation is satisfactory
+..\raw\tts_generated\tts_0171.wav,hello how are you doing today
+..\raw\tts_generated\tts_0172.wav,this is my final year project
+..\raw\tts_generated\tts_0173.wav,speech recognition using cnn lstm
+..\raw\tts_generated\tts_0174.wav,good morning everyone
+..\raw\tts_generated\tts_0175.wav,the weather is nice today
+..\raw\tts_generated\tts_0176.wav,i am working on my project
+..\raw\tts_generated\tts_0177.wav,thank you for your help
+..\raw\tts_generated\tts_0178.wav,can you please repeat that
+..\raw\tts_generated\tts_0179.wav,the system works correctly
+..\raw\tts_generated\tts_0180.wav,i need to test this application
+..\raw\tts_generated\tts_0181.wav,hello how are you doing today
+..\raw\tts_generated\tts_0182.wav,this is my final year project
+..\raw\tts_generated\tts_0183.wav,speech recognition using cnn lstm
+..\raw\tts_generated\tts_0184.wav,good morning everyone
+..\raw\tts_generated\tts_0185.wav,the weather is nice today
+..\raw\tts_generated\tts_0186.wav,i am working on my project
+..\raw\tts_generated\tts_0187.wav,thank you for your help
+..\raw\tts_generated\tts_0188.wav,can you please repeat that
+..\raw\tts_generated\tts_0189.wav,the system works correctly
+..\raw\tts_generated\tts_0190.wav,i need to test this application
+..\raw\tts_generated\tts_0191.wav,the microphone is working fine
+..\raw\tts_generated\tts_0192.wav,this is a test recording
+..\raw\tts_generated\tts_0193.wav,the model is learning well
+..\raw\tts_generated\tts_0194.wav,i hope this works properly
+..\raw\tts_generated\tts_0195.wav,let me try again
+..\raw\tts_generated\tts_0196.wav,the accuracy is improving
+..\raw\tts_generated\tts_0197.wav,this is sample number one
+..\raw\tts_generated\tts_0198.wav,the training is progressing
+..\raw\tts_generated\tts_0199.wav,i am recording my voice
+..\raw\tts_generated\tts_0200.wav,the system recognizes speech
+..\raw\tts_generated\tts_0201.wav,this is a voice recognition system
+..\raw\tts_generated\tts_0202.wav,the demo will work perfectly
+..\raw\tts_generated\tts_0203.wav,i am testing the microphone
+..\raw\tts_generated\tts_0204.wav,the audio quality is good
+..\raw\tts_generated\tts_0205.wav,this is my voice sample
+..\raw\tts_generated\tts_0206.wav,the model needs more data
+..\raw\tts_generated\tts_0207.wav,i am speaking clearly
+..\raw\tts_generated\tts_0208.wav,the transcription should be accurate
+..\raw\tts_generated\tts_0209.wav,this is a speech to text system
+..\raw\tts_generated\tts_0210.wav,the neural network is learning
+..\raw\tts_generated\tts_0211.wav,machine learning is fascinating
+..\raw\tts_generated\tts_0212.wav,deep learning models are powerful
+..\raw\tts_generated\tts_0213.wav,artificial intelligence is the future
+..\raw\tts_generated\tts_0214.wav,natural language processing is complex
+..\raw\tts_generated\tts_0215.wav,the computer understands my speech
+..\raw\tts_generated\tts_0216.wav,voice recognition technology is advanced
+..\raw\tts_generated\tts_0217.wav,the system processes audio signals
+..\raw\tts_generated\tts_0218.wav,feature extraction is important
+..\raw\tts_generated\tts_0219.wav,the model uses convolutional layers
+..\raw\tts_generated\tts_0220.wav,long short term memory networks
+..\raw\tts_generated\tts_0221.wav,connectionist temporal classification
+..\raw\tts_generated\tts_0222.wav,the model predicts character sequences
+..\raw\tts_generated\tts_0223.wav,training requires large datasets
+..\raw\tts_generated\tts_0224.wav,validation helps prevent overfitting
+..\raw\tts_generated\tts_0225.wav,the loss function measures accuracy
+..\raw\tts_generated\tts_0226.wav,gradient descent optimizes parameters
+..\raw\tts_generated\tts_0227.wav,backpropagation updates weights
+..\raw\tts_generated\tts_0228.wav,the model learns from examples
+..\raw\tts_generated\tts_0229.wav,data augmentation improves robustness
+..\raw\tts_generated\tts_0230.wav,the system handles different speakers
+..\raw\tts_generated\tts_0231.wav,accent variations are challenging
+..\raw\tts_generated\tts_0232.wav,noise reduction improves accuracy
+..\raw\tts_generated\tts_0233.wav,the model generalizes to new data
+..\raw\tts_generated\tts_0234.wav,inference speed is important
+..\raw\tts_generated\tts_0235.wav,real time processing is possible
+..\raw\tts_generated\tts_0236.wav,the web interface is user friendly
+..\raw\tts_generated\tts_0237.wav,the demo shows system capabilities
+..\raw\tts_generated\tts_0238.wav,evaluation metrics measure performance
+..\raw\tts_generated\tts_0239.wav,word error rate indicates accuracy
+..\raw\tts_generated\tts_0240.wav,character error rate shows precision
+..\raw\tts_generated\tts_0241.wav,the system works for multiple languages
+..\raw\tts_generated\tts_0242.wav,speech recognition has many applications
+..\raw\tts_generated\tts_0243.wav,voice assistants use similar technology
+..\raw\tts_generated\tts_0244.wav,the model can be improved with more data
+..\raw\tts_generated\tts_0245.wav,transfer learning helps with small datasets
+..\raw\tts_generated\tts_0246.wav,fine tuning adapts to specific domains
+..\raw\tts_generated\tts_0247.wav,the architecture is well designed
+..\raw\tts_generated\tts_0248.wav,the implementation is efficient
+..\raw\tts_generated\tts_0249.wav,the code is production ready
+..\raw\tts_generated\tts_0250.wav,documentation helps users understand
+..\raw\tts_generated\tts_0251.wav,testing ensures system reliability
+..\raw\tts_generated\tts_0252.wav,the project demonstrates machine learning
+..\raw\tts_generated\tts_0253.wav,deep learning requires computational resources
+..\raw\tts_generated\tts_0254.wav,cpu training is slower but accessible
+..\raw\tts_generated\tts_0255.wav,gpu acceleration speeds up training
+..\raw\tts_generated\tts_0256.wav,the model architecture is important
+..\raw\tts_generated\tts_0257.wav,hyperparameters affect performance
+..\raw\tts_generated\tts_0258.wav,learning rate controls training speed
+..\raw\tts_generated\tts_0259.wav,batch size affects memory usage
+..\raw\tts_generated\tts_0260.wav,epochs determine training duration
+..\raw\tts_generated\tts_0261.wav,early stopping prevents overfitting
+..\raw\tts_generated\tts_0262.wav,checkpointing saves progress
+..\raw\tts_generated\tts_0263.wav,the model can be deployed
+..\raw\tts_generated\tts_0264.wav,inference is fast and accurate
+..\raw\tts_generated\tts_0265.wav,the system is ready for demo
+..\raw\tts_generated\tts_0266.wav,hello how are you doing today
+..\raw\tts_generated\tts_0267.wav,this is my final year project
+..\raw\tts_generated\tts_0268.wav,speech recognition using cnn lstm
+..\raw\tts_generated\tts_0269.wav,good morning everyone
+..\raw\tts_generated\tts_0270.wav,the weather is nice today
+..\raw\tts_generated\tts_0271.wav,i am working on my project
+..\raw\tts_generated\tts_0272.wav,thank you for your help
+..\raw\tts_generated\tts_0273.wav,can you please repeat that
+..\raw\tts_generated\tts_0274.wav,the system works correctly
+..\raw\tts_generated\tts_0275.wav,i need to test this application
+..\raw\tts_generated\tts_0276.wav,the microphone is working fine
+..\raw\tts_generated\tts_0277.wav,this is a test recording
+..\raw\tts_generated\tts_0278.wav,the model is learning well
+..\raw\tts_generated\tts_0279.wav,i hope this works properly
+..\raw\tts_generated\tts_0280.wav,let me try again
+..\raw\tts_generated\tts_0281.wav,the accuracy is improving
+..\raw\tts_generated\tts_0282.wav,this is sample number one
+..\raw\tts_generated\tts_0283.wav,the training is progressing
+..\raw\tts_generated\tts_0284.wav,i am recording my voice
+..\raw\tts_generated\tts_0285.wav,the system recognizes speech
+..\raw\tts_generated\tts_0286.wav,this is a voice recognition system
+..\raw\tts_generated\tts_0287.wav,the demo will work perfectly
+..\raw\tts_generated\tts_0288.wav,i am testing the microphone
+..\raw\tts_generated\tts_0289.wav,the audio quality is good
+..\raw\tts_generated\tts_0290.wav,this is my voice sample
+..\raw\tts_generated\tts_0291.wav,the model needs more data
+..\raw\tts_generated\tts_0292.wav,i am speaking clearly
+..\raw\tts_generated\tts_0293.wav,the transcription should be accurate
+..\raw\tts_generated\tts_0294.wav,this is a speech to text system
+..\raw\tts_generated\tts_0295.wav,the neural network is learning
+..\raw\tts_generated\tts_0296.wav,machine learning is fascinating
+..\raw\tts_generated\tts_0297.wav,deep learning models are powerful
+..\raw\tts_generated\tts_0298.wav,artificial intelligence is the future
+..\raw\tts_generated\tts_0299.wav,natural language processing is complex
+..\raw\tts_generated\tts_0300.wav,the computer understands my speech
+..\raw\tts_generated\tts_0301.wav,voice recognition technology is advanced
+..\raw\tts_generated\tts_0302.wav,the system processes audio signals
+..\raw\tts_generated\tts_0303.wav,feature extraction is important
+..\raw\tts_generated\tts_0304.wav,the model uses convolutional layers
+..\raw\tts_generated\tts_0305.wav,long short term memory networks
+..\raw\tts_generated\tts_0306.wav,connectionist temporal classification
+..\raw\tts_generated\tts_0307.wav,the model predicts character sequences
+..\raw\tts_generated\tts_0308.wav,training requires large datasets
+..\raw\tts_generated\tts_0309.wav,validation helps prevent overfitting
+..\raw\tts_generated\tts_0310.wav,the loss function measures accuracy
+..\raw\tts_generated\tts_0311.wav,gradient descent optimizes parameters
+..\raw\tts_generated\tts_0312.wav,backpropagation updates weights
+..\raw\tts_generated\tts_0313.wav,the model learns from examples
+..\raw\tts_generated\tts_0314.wav,data augmentation improves robustness
+..\raw\tts_generated\tts_0315.wav,the system handles different speakers
+..\raw\tts_generated\tts_0316.wav,accent variations are challenging
+..\raw\tts_generated\tts_0317.wav,noise reduction improves accuracy
+..\raw\tts_generated\tts_0318.wav,the model generalizes to new data
+..\raw\tts_generated\tts_0319.wav,inference speed is important
+..\raw\tts_generated\tts_0320.wav,real time processing is possible
+..\raw\tts_generated\tts_0321.wav,the web interface is user friendly
+..\raw\tts_generated\tts_0322.wav,the demo shows system capabilities
+..\raw\tts_generated\tts_0323.wav,evaluation metrics measure performance
+..\raw\tts_generated\tts_0324.wav,word error rate indicates accuracy
+..\raw\tts_generated\tts_0325.wav,character error rate shows precision
+..\raw\tts_generated\tts_0326.wav,the system works for multiple languages
+..\raw\tts_generated\tts_0327.wav,speech recognition has many applications
+..\raw\tts_generated\tts_0328.wav,voice assistants use similar technology
+..\raw\tts_generated\tts_0329.wav,the model can be improved with more data
+..\raw\tts_generated\tts_0330.wav,transfer learning helps with small datasets
+..\raw\tts_generated\tts_0331.wav,fine tuning adapts to specific domains
+..\raw\tts_generated\tts_0332.wav,the architecture is well designed
+..\raw\tts_generated\tts_0333.wav,the implementation is efficient
+..\raw\tts_generated\tts_0334.wav,the code is production ready
+..\raw\tts_generated\tts_0335.wav,documentation helps users understand
+..\raw\tts_generated\tts_0336.wav,testing ensures system reliability
+..\raw\tts_generated\tts_0337.wav,the project demonstrates machine learning
+..\raw\tts_generated\tts_0338.wav,deep learning requires computational resources
+..\raw\tts_generated\tts_0339.wav,cpu training is slower but accessible
+..\raw\tts_generated\tts_0340.wav,gpu acceleration speeds up training
+..\raw\tts_generated\tts_0341.wav,the model architecture is important
+..\raw\tts_generated\tts_0342.wav,hyperparameters affect performance
+..\raw\tts_generated\tts_0343.wav,learning rate controls training speed
+..\raw\tts_generated\tts_0344.wav,batch size affects memory usage
+..\raw\tts_generated\tts_0345.wav,epochs determine training duration
+..\raw\tts_generated\tts_0346.wav,early stopping prevents overfitting
+..\raw\tts_generated\tts_0347.wav,checkpointing saves progress
+..\raw\tts_generated\tts_0348.wav,the model can be deployed
+..\raw\tts_generated\tts_0349.wav,inference is fast and accurate
+..\raw\tts_generated\tts_0350.wav,the system is ready for demo
+..\raw\tts_generated\tts_0351.wav,hello how are you doing today
+..\raw\tts_generated\tts_0352.wav,this is my final year project
+..\raw\tts_generated\tts_0353.wav,speech recognition using cnn lstm
+..\raw\tts_generated\tts_0354.wav,good morning everyone
+..\raw\tts_generated\tts_0355.wav,the weather is nice today
+..\raw\tts_generated\tts_0356.wav,i am working on my project
+..\raw\tts_generated\tts_0357.wav,thank you for your help
+..\raw\tts_generated\tts_0358.wav,can you please repeat that
+..\raw\tts_generated\tts_0359.wav,the system works correctly
+..\raw\tts_generated\tts_0360.wav,i need to test this application
+..\raw\tts_generated\tts_0361.wav,the microphone is working fine
+..\raw\tts_generated\tts_0362.wav,this is a test recording
+..\raw\tts_generated\tts_0363.wav,the model is learning well
+..\raw\tts_generated\tts_0364.wav,i hope this works properly
+..\raw\tts_generated\tts_0365.wav,let me try again
+..\raw\tts_generated\tts_0366.wav,the accuracy is improving
+..\raw\tts_generated\tts_0367.wav,this is sample number one
+..\raw\tts_generated\tts_0368.wav,the training is progressing
+..\raw\tts_generated\tts_0369.wav,i am recording my voice
+..\raw\tts_generated\tts_0370.wav,the system recognizes speech
+..\raw\tts_generated\tts_0371.wav,this is a voice recognition system
+..\raw\tts_generated\tts_0372.wav,the demo will work perfectly
+..\raw\tts_generated\tts_0373.wav,i am testing the microphone
+..\raw\tts_generated\tts_0374.wav,the audio quality is good
+..\raw\tts_generated\tts_0375.wav,this is my voice sample
+..\raw\tts_generated\tts_0376.wav,the model needs more data
+..\raw\tts_generated\tts_0377.wav,i am speaking clearly
+..\raw\tts_generated\tts_0378.wav,the transcription should be accurate
+..\raw\tts_generated\tts_0379.wav,this is a speech to text system
+..\raw\tts_generated\tts_0380.wav,the neural network is learning
+data/raw/utt171.wav,the system works for new users
+data/raw/utt172.wav,the demo handles different voices
+data/raw/utt173.wav,the output may vary slightly
+data/raw/utt174.wav,the system still responds
+data/raw/utt175.wav,the project demonstrates feasibility
+data/raw/utt176.wav,the approach is valid
+data/raw/utt177.wav,the system follows standards
+data/raw/utt178.wav,the demo is ready
+data/raw/utt179.wav,the project is finalized
+data/raw/utt180.wav,the submission is complete
+data/raw/utt181.wav,this concludes the demonstration
+data/raw/utt182.wav,thank you for your attention
+data/raw/utt183.wav,this is the end of the demo
+data/raw/utt184.wav,the system performed as expected
+data/raw/utt185.wav,the project is evaluated
+data/raw/utt186.wav,the demo was successful
+data/raw/utt187.wav,the output is shown clearly
+data/raw/utt188.wav,the project is approved
+data/raw/utt189.wav,the system is verified
+data/raw/utt190.wav,the implementation is correct
+data/raw/utt191.wav,the final result is satisfactory
+data/raw/utt192.wav,the model works as intended
+data/raw/utt193.wav,the demo meets requirements
+data/raw/utt194.wav,the project is ready for review
+data/raw/utt195.wav,the system is complete
+data/raw/utt196.wav,the demo is stable
+data/raw/utt197.wav,the output is reliable
+data/raw/utt198.wav,the project is successful
+data/raw/utt199.wav,the system works correctly
+data/raw/utt200.wav,thank you
+data/raw/utt201.wav,speech recognition converts voice into text
+data/raw/utt202.wav,speech recognition converts spoken language into text
+data/raw/utt203.wav,this system converts speech into text
+data/raw/utt204.wav,this project implements speech to text
+data/raw/utt205.wav,the system recognizes spoken words
+data/raw/utt206.wav,the model converts audio to text
+data/raw/utt207.wav,the system processes human speech
+data/raw/utt208.wav,speech to text is widely used
+data/raw/utt209.wav,speech recognition has many applications
+data/raw/utt210.wav,the system understands spoken input
+data/raw/utt211.wav,this project uses deep learning
+data/raw/utt212.wav,this is a final year project
+data/raw/utt213.wav,the demo shows live transcription
+data/raw/utt214.wav,the system works in real time
+data/raw/utt215.wav,the demo processes microphone input
+data/raw/utt216.wav,this project follows vtu guidelines
+data/raw/utt217.wav,the project demonstrates feasibility
+data/raw/utt218.wav,the demo is easy to understand
+data/raw/utt219.wav,the system is ready for evaluation
+data/raw/utt220.wav,this project is industry inspired
+data/raw/utt221.wav,cnn extracts features from audio
+data/raw/utt222.wav,cnn learns local patterns
+data/raw/utt223.wav,cnn processes spectral features
+data/raw/utt224.wav,cnn improves feature representation
+data/raw/utt225.wav,cnn extracts meaningful information
+data/raw/utt226.wav,cnn reduces noise impact
+data/raw/utt227.wav,cnn handles input variations
+data/raw/utt228.wav,cnn processes audio frames
+data/raw/utt229.wav,cnn helps improve accuracy
+data/raw/utt230.wav,cnn is used for feature extraction
+data/raw/utt231.wav,lstm learns temporal patterns
+data/raw/utt232.wav,lstm handles sequence data
+data/raw/utt233.wav,lstm captures time dependencies
+data/raw/utt234.wav,lstm processes speech sequences
+data/raw/utt235.wav,lstm learns long term patterns
+data/raw/utt236.wav,lstm models speech dynamics
+data/raw/utt237.wav,lstm improves sequence learning
+data/raw/utt238.wav,lstm processes continuous speech
+data/raw/utt239.wav,lstm helps predict characters
+data/raw/utt240.wav,lstm handles variable length input
+data/raw/utt241.wav,the model uses ctc loss
+data/raw/utt242.wav,ctc aligns audio and text
+data/raw/utt243.wav,ctc handles unsegmented data
+data/raw/utt244.wav,the model predicts character sequences
+data/raw/utt245.wav,the output text is readable
+data/raw/utt246.wav,the transcription is meaningful
+data/raw/utt247.wav,the system works on cpu
+data/raw/utt248.wav,the output appears quickly
+data/raw/utt249.wav,the system performs consistently
+data/raw/utt250.wav,the demo is successful
+data/raw/utt251.wav,this speech system converts audio into text
+data/raw/utt252.wav,the demo processes real time speech
+data/raw/utt253.wav,the model recognizes spoken sentences
+data/raw/utt254.wav,the system converts voice to text
+data/raw/utt255.wav,the model processes speech input
+data/raw/utt256.wav,the system handles spoken language
+data/raw/utt257.wav,speech recognition is useful in many fields
+data/raw/utt258.wav,the system understands human speech
+data/raw/utt259.wav,the model converts spoken audio
+data/raw/utt260.wav,the demo supports live speech
+data/raw/utt261.wav,the project is based on deep learning
+data/raw/utt262.wav,the system uses neural networks
+data/raw/utt263.wav,the demo works smoothly
+data/raw/utt264.wav,the system runs in real time
+data/raw/utt265.wav,the demo shows speech recognition
+data/raw/utt266.wav,the project follows standard methodology
+data/raw/utt267.wav,the system is ready for demonstration
+data/raw/utt268.wav,the demo output is readable
+data/raw/utt269.wav,the system is easy to use
+data/raw/utt270.wav,the project meets requirements
+data/raw/utt271.wav,cnn extracts audio features
+data/raw/utt272.wav,cnn processes frequency patterns
+data/raw/utt273.wav,cnn improves feature learning
+data/raw/utt274.wav,cnn handles noise variations
+data/raw/utt275.wav,cnn learns useful representations
+data/raw/utt276.wav,cnn processes input frames
+data/raw/utt277.wav,cnn reduces noise effects
+data/raw/utt278.wav,cnn supports feature extraction
+data/raw/utt279.wav,cnn improves recognition accuracy
+data/raw/utt280.wav,cnn is effective for audio
+data/raw/utt281.wav,lstm models time based patterns
+data/raw/utt282.wav,lstm processes speech over time
+data/raw/utt283.wav,lstm learns sequential information
+data/raw/utt284.wav,lstm captures speech dependencies
+data/raw/utt285.wav,lstm improves sequence modeling
+data/raw/utt286.wav,lstm handles variable length speech
+data/raw/utt287.wav,lstm processes continuous audio
+data/raw/utt288.wav,lstm helps predict outputs
+data/raw/utt289.wav,lstm supports speech recognition
+data/raw/utt290.wav,lstm improves temporal learning
+data/raw/utt291.wav,the model predicts characters
+data/raw/utt292.wav,the output text is clear
+data/raw/utt293.wav,the transcription matches speech
+data/raw/utt294.wav,the system avoids manual rules
+data/raw/utt295.wav,the model learns from data
+data/raw/utt296.wav,the output depends on clarity
+data/raw/utt297.wav,the system performs reliably
+data/raw/utt298.wav,the demo results are acceptable
+data/raw/utt299.wav,the system demonstrates feasibility
+data/raw/utt300.wav,the demo is complete
+data/raw/utt301.wav,this project demonstrates speech to text conversion
+data/raw/utt302.wav,the model converts speech signals into text
+data/raw/utt303.wav,the demo runs efficiently on cpu
+data/raw/utt304.wav,the system remains stable during execution
+data/raw/utt305.wav,the transcription output is readable
+data/raw/utt306.wav,the output text appears quickly
+data/raw/utt307.wav,the model handles new speech input
+data/raw/utt308.wav,the system avoids manual transcription
+data/raw/utt309.wav,the demo shows practical feasibility
+data/raw/utt310.wav,the project adheres to vtu standards
+data/raw/utt311.wav,the model learns from speech data
+data/raw/utt312.wav,the training process is systematic
+data/raw/utt313.wav,the inference runs in real time
+data/raw/utt314.wav,the output depends on pronunciation
+data/raw/utt315.wav,this solution is practical and effective
+data/raw/utt316.wav,the system supports multiple users
+data/raw/utt317.wav,the demo explanation is simple
+data/raw/utt318.wav,the project documentation is complete
+data/raw/utt319.wav,the system recognizes spoken sentences
+data/raw/utt320.wav,the model processes speech sequences
+data/raw/utt321.wav,cnn and lstm work together for recognition
+data/raw/utt322.wav,the architecture supports temporal learning
+data/raw/utt323.wav,the model processes sequential audio data
+data/raw/utt324.wav,the network learns speech representations
+data/raw/utt325.wav,the system processes continuous speech
+data/raw/utt326.wav,the model improves with more training data
+data/raw/utt327.wav,the system adapts to speech variations
+data/raw/utt328.wav,the demo output is consistent
+data/raw/utt329.wav,the project meets evaluation criteria
+data/raw/utt330.wav,the system is fully functional
+data/raw/utt331.wav,the output text matches spoken words
+data/raw/utt332.wav,the transcription quality is acceptable
+data/raw/utt333.wav,the model outputs character sequences
+data/raw/utt334.wav,the system handles background noise
+data/raw/utt335.wav,the demo works for different speakers
+data/raw/utt336.wav,the project demonstrates effectiveness
+data/raw/utt337.wav,the system is ready for evaluation
+data/raw/utt338.wav,the model generalizes to unseen input
+data/raw/utt339.wav,the demo results are satisfactory
+data/raw/utt340.wav,the project objectives are achieved
+data/raw/utt341.wav,the system converts spoken language
+data/raw/utt342.wav,the model processes audio features
+data/raw/utt343.wav,the demo supports live testing
+data/raw/utt344.wav,the system works as expected
+data/raw/utt345.wav,the model accuracy improves gradually
+data/raw/utt346.wav,the demo runs without errors
+data/raw/utt347.wav,the system processes natural speech
+data/raw/utt348.wav,the project is ready for submission
+data/raw/utt349.wav,the output text is meaningful
+data/raw/utt350.wav,thank you
+data/raw/utt351.wav,speech recognition converts human speech into text
+data/raw/utt352.wav,this system accurately converts speech to text
+data/raw/utt353.wav,the project focuses on speech recognition
+data/raw/utt354.wav,the model processes spoken language
+data/raw/utt355.wav,the system recognizes speech patterns
+data/raw/utt356.wav,the demo converts voice to written text
+data/raw/utt357.wav,the system processes real time audio
+data/raw/utt358.wav,speech to text technology is useful
+data/raw/utt359.wav,the system understands spoken sentences
+data/raw/utt360.wav,the model converts audio signals
+data/raw/utt361.wav,this project applies deep learning methods
+data/raw/utt362.wav,the system uses neural network models
+data/raw/utt363.wav,the demo shows real time transcription
+data/raw/utt364.wav,the system performs speech recognition
+data/raw/utt365.wav,the project follows academic guidelines
+data/raw/utt366.wav,the demo demonstrates system capability
+data/raw/utt367.wav,the system is simple and effective
+data/raw/utt368.wav,the demo is stable during execution
+data/raw/utt369.wav,the system output is readable
+data/raw/utt370.wav,the project is ready for demonstration
+data/raw/utt371.wav,cnn extracts important speech features
+data/raw/utt372.wav,cnn processes spectral information
+data/raw/utt373.wav,cnn improves audio feature learning
+data/raw/utt374.wav,cnn handles variations in input
+data/raw/utt375.wav,cnn supports speech processing
+data/raw/utt376.wav,cnn processes short audio frames
+data/raw/utt377.wav,cnn improves recognition performance
+data/raw/utt378.wav,cnn is effective for feature extraction
+data/raw/utt379.wav,cnn helps reduce noise effects
+data/raw/utt380.wav,cnn contributes to accuracy
+data/raw/utt381.wav,lstm captures temporal speech patterns
+data/raw/utt382.wav,lstm processes sequences over time
+data/raw/utt383.wav,lstm learns dependencies in speech
+data/raw/utt384.wav,lstm improves sequence prediction
+data/raw/utt385.wav,lstm handles long term information
+data/raw/utt386.wav,lstm processes variable length input
+data/raw/utt387.wav,lstm supports continuous speech input
+data/raw/utt388.wav,lstm helps recognize speech patterns
+data/raw/utt389.wav,lstm improves temporal modeling
+data/raw/utt390.wav,lstm is suitable for speech tasks
+data/raw/utt391.wav,the model uses ctc for alignment
+data/raw/utt392.wav,ctc helps map audio to text
+data/raw/utt393.wav,the model predicts character outputs
+data/raw/utt394.wav,the transcription quality is acceptable
+data/raw/utt395.wav,the system works reliably
+data/raw/utt396.wav,the demo output appears quickly
+data/raw/utt397.wav,the system handles unseen speech
+data/raw/utt398.wav,the model adapts to speaker variation
+data/raw/utt399.wav,the demo results are consistent
+data/raw/utt400.wav,the project is successful
+data/raw/utt401.wav,this system performs automatic speech recognition
+data/raw/utt402.wav,the model converts spoken words into text
+data/raw/utt403.wav,the demo processes live audio input
+data/raw/utt404.wav,the system recognizes continuous speech
+data/raw/utt405.wav,the model processes human voice
+data/raw/utt406.wav,the system converts audio signals to text
+data/raw/utt407.wav,speech recognition is an important application
+data/raw/utt408.wav,the system understands spoken language
+data/raw/utt409.wav,the model converts speech signals
+data/raw/utt410.wav,the demo supports real time recognition
+data/raw/utt411.wav,this project uses neural network models
+data/raw/utt412.wav,the system applies deep learning techniques
+data/raw/utt413.wav,the demo works efficiently
+data/raw/utt414.wav,the system runs smoothly
+data/raw/utt415.wav,the demo shows real time output
+data/raw/utt416.wav,the project follows proper methodology
+data/raw/utt417.wav,the system is prepared for evaluation
+data/raw/utt418.wav,the demo output is meaningful
+data/raw/utt419.wav,the system is easy to operate
+data/raw/utt420.wav,the project meets academic requirements
+data/raw/utt421.wav,cnn extracts relevant audio information
+data/raw/utt422.wav,cnn processes frequency domain features
+data/raw/utt423.wav,cnn improves speech feature learning
+data/raw/utt424.wav,cnn handles background noise
+data/raw/utt425.wav,cnn learns useful audio representations
+data/raw/utt426.wav,cnn processes input segments
+data/raw/utt427.wav,cnn improves model performance
+data/raw/utt428.wav,cnn supports robust feature extraction
+data/raw/utt429.wav,cnn improves overall accuracy
+data/raw/utt430.wav,cnn is suitable for speech tasks
+data/raw/utt431.wav,lstm models temporal speech information
+data/raw/utt432.wav,lstm processes sequential audio data
+data/raw/utt433.wav,lstm learns time based dependencies
+data/raw/utt434.wav,lstm captures long term speech patterns
+data/raw/utt435.wav,lstm improves recognition stability
+data/raw/utt436.wav,lstm handles variable length sequences
+data/raw/utt437.wav,lstm processes continuous speech data
+data/raw/utt438.wav,lstm supports sequence prediction
+data/raw/utt439.wav,lstm improves temporal consistency
+data/raw/utt440.wav,lstm is effective for speech modeling
+data/raw/utt441.wav,the model outputs character sequences
+data/raw/utt442.wav,the transcription result is readable
+data/raw/utt443.wav,the system avoids manual processing
+data/raw/utt444.wav,the model learns from training data
+data/raw/utt445.wav,the output depends on input clarity
+data/raw/utt446.wav,the system performs consistently
+data/raw/utt447.wav,the demo results are reliable
+data/raw/utt448.wav,the project demonstrates feasibility
+data/raw/utt449.wav,the system is ready for demonstration
+data/raw/utt450.wav,the demo execution is successful
+data/raw/utt451.wav,this system converts speech signals into text
+data/raw/utt452.wav,the model performs speech recognition
+data/raw/utt453.wav,the demo runs in real time on cpu
+data/raw/utt454.wav,the system maintains stable performance
+data/raw/utt455.wav,the transcription output is clear
+data/raw/utt456.wav,the output text is produced quickly
+data/raw/utt457.wav,the model handles continuous speech
+data/raw/utt458.wav,the system avoids manual transcription
+data/raw/utt459.wav,the demo shows practical implementation
+data/raw/utt460.wav,the project follows vtu requirements
+data/raw/utt461.wav,the model learns patterns from speech
+data/raw/utt462.wav,the training process is well defined
+data/raw/utt463.wav,the inference stage runs smoothly
+data/raw/utt464.wav,the output depends on speech quality
+data/raw/utt465.wav,this solution is efficient and practical
+data/raw/utt466.wav,the system supports multiple speakers
+data/raw/utt467.wav,the demo explanation is straightforward
+data/raw/utt469.wav,the system recognizes spoken sentences
+data/raw/utt470.wav,the model processes speech sequences
+data/raw/utt471.wav,cnn and lstm work together effectively
+data/raw/utt472.wav,the architecture supports sequence learning
+data/raw/utt473.wav,the model processes temporal audio data
+data/raw/utt474.wav,the network learns useful representations
+data/raw/utt475.wav,the system processes natural speech
+data/raw/utt476.wav,the model improves with additional data
+data/raw/utt477.wav,the system adapts to speech variation
+data/raw/utt478.wav,the demo output remains consistent
+data/raw/utt479.wav,the project meets evaluation criteria
+data/raw/utt480.wav,the system is fully operational
+data/raw/utt481.wav,the output text matches spoken input
+data/raw/utt482.wav,the transcription accuracy is acceptable
+data/raw/utt483.wav,the model outputs character sequences
+data/raw/utt484.wav,the system handles background noise
+data/raw/utt485.wav,the demo works across speakers
+data/raw/utt486.wav,the project demonstrates effectiveness
+data/raw/utt487.wav,the system is ready for evaluation
+data/raw/utt488.wav,the model generalizes to unseen speech
+data/raw/utt489.wav,the demo results are satisfactory
+data/raw/utt490.wav,the project objectives are achieved
+data/raw/utt491.wav,the system converts spoken language to text
+data/raw/utt492.wav,the model processes acoustic features
+data/raw/utt493.wav,the demo supports live testing
+data/raw/utt494.wav,the system operates as expected
+data/raw/utt495.wav,the model accuracy improves with training
+data/raw/utt496.wav,the demo runs without errors
+data/raw/utt497.wav,the system processes real world speech
+data/raw/utt498.wav,the project is ready for submission
+data/raw/utt499.wav,the output text is meaningful
+data/raw/utt500.wav,thank you
+data/raw/utt501.wav,speech recognition converts spoken speech into text
+data/raw/utt502.wav,this system performs speech to text conversion
+data/raw/utt503.wav,the project focuses on automatic speech recognition
+data/raw/utt504.wav,the model processes continuous spoken language
+data/raw/utt505.wav,the system recognizes human voice patterns
+data/raw/utt506.wav,the demo converts speech into readable text
+data/raw/utt507.wav,the system processes live audio input
+data/raw/utt508.wav,speech to text systems are widely used
+data/raw/utt509.wav,the system understands natural speech
+data/raw/utt510.wav,the model converts acoustic signals
+data/raw/utt511.wav,this project uses cnn and lstm networks
+data/raw/utt512.wav,the system applies deep learning models
+data/raw/utt513.wav,the demo shows stable transcription
+data/raw/utt514.wav,the system performs recognition in real time
+data/raw/utt515.wav,the project follows standard guidelines
+data/raw/utt516.wav,the demo demonstrates reliable output
+data/raw/utt517.wav,the system design is simple and effective
+data/raw/utt518.wav,the demo remains stable throughout execution
+data/raw/utt519.wav,the system output is meaningful
+data/raw/utt520.wav,the project is ready for presentation
+data/raw/utt521.wav,cnn extracts robust audio features
+data/raw/utt522.wav,cnn processes spectral representations
+data/raw/utt523.wav,cnn improves speech feature quality
+data/raw/utt524.wav,cnn handles variations in speech input
+data/raw/utt525.wav,cnn supports accurate recognition
+data/raw/utt526.wav,cnn processes short time frames
+data/raw/utt527.wav,cnn improves overall model performance
+data/raw/utt528.wav,cnn contributes to noise reduction
+data/raw/utt529.wav,cnn enhances feature extraction
+data/raw/utt530.wav,cnn is effective for speech analysis
+data/raw/utt531.wav,lstm captures long term dependencies
+data/raw/utt532.wav,lstm processes speech sequences over time
+data/raw/utt533.wav,lstm learns temporal relationships
+data/raw/utt534.wav,lstm improves sequence prediction
+data/raw/utt535.wav,lstm handles variable length speech
+data/raw/utt536.wav,lstm supports continuous audio processing
+data/raw/utt537.wav,lstm improves recognition consistency
+data/raw/utt538.wav,lstm models temporal speech information
+data/raw/utt539.wav,lstm enhances sequence learning
+data/raw/utt540.wav,lstm is suitable for sequence modeling
+data/raw/utt541.wav,the model uses ctc alignment
+data/raw/utt542.wav,ctc maps audio frames to text
+data/raw/utt543.wav,the model predicts character sequences
+data/raw/utt544.wav,the transcription output is readable
+data/raw/utt545.wav,the system performs reliably in practice
+data/raw/utt546.wav,the demo output appears quickly
+data/raw/utt547.wav,the system adapts to new speakers
+data/raw/utt548.wav,the model generalizes well to new data
+data/raw/utt549.wav,the demo results are consistent
+data/raw/utt550.wav,the project implementation is successful
+data/raw/utt551.wav,this system performs real time speech recognition
+data/raw/utt552.wav,the model converts spoken language into text
+data/raw/utt553.wav,the demo processes live microphone audio
+data/raw/utt554.wav,the system recognizes continuous spoken input
+data/raw/utt555.wav,the model processes human speech signals
+data/raw/utt556.wav,the system converts audio input into text
+data/raw/utt557.wav,speech recognition is useful in daily applications
+data/raw/utt558.wav,the system understands natural spoken language
+data/raw/utt559.wav,the model converts speech audio
+data/raw/utt560.wav,the demo supports continuous speech recognition
+data/raw/utt561.wav,this project applies deep learning methods
+data/raw/utt562.wav,the system uses neural network architectures
+data/raw/utt563.wav,the demo works reliably in practice
+data/raw/utt564.wav,the system runs efficiently on cpu
+data/raw/utt565.wav,the demo shows real time transcription output
+data/raw/utt566.wav,the project follows academic methodology
+data/raw/utt567.wav,the system is prepared for final evaluation
+data/raw/utt568.wav,the demo output remains readable
+data/raw/utt569.wav,the system is simple to operate
+data/raw/utt570.wav,the project meets evaluation requirements
+data/raw/utt571.wav,cnn extracts relevant acoustic features
+data/raw/utt572.wav,cnn processes time frequency representations
+data/raw/utt573.wav,cnn improves speech feature learning
+data/raw/utt574.wav,cnn handles noise in audio signals
+data/raw/utt575.wav,cnn learns meaningful representations
+data/raw/utt576.wav,cnn processes short audio segments
+data/raw/utt577.wav,cnn improves recognition performance
+data/raw/utt578.wav,cnn supports robust audio processing
+data/raw/utt579.wav,cnn enhances overall model accuracy
+data/raw/utt580.wav,cnn is effective for speech recognition
+data/raw/utt581.wav,lstm models temporal speech dependencies
+data/raw/utt582.wav,lstm processes sequential speech data
+data/raw/utt583.wav,lstm learns long term speech patterns
+data/raw/utt584.wav,lstm captures temporal relationships
+data/raw/utt585.wav,lstm improves speech sequence modeling
+data/raw/utt586.wav,lstm handles variable duration speech
+data/raw/utt587.wav,lstm processes continuous speech signals
+data/raw/utt588.wav,lstm supports sequence prediction
+data/raw/utt589.wav,lstm improves temporal consistency
+data/raw/utt590.wav,lstm is suitable for temporal modeling
+data/raw/utt591.wav,the model predicts output characters
+data/raw/utt592.wav,the transcription output is clear
+data/raw/utt593.wav,the system avoids manual transcription rules
+data/raw/utt594.wav,the model learns effectively from data
+data/raw/utt595.wav,the output depends on input clarity
+data/raw/utt596.wav,the system performs consistently well
+data/raw/utt597.wav,the demo results are reliable
+data/raw/utt598.wav,the project demonstrates practical feasibility
+data/raw/utt599.wav,the system is ready for demonstration
+data/raw/utt600.wav,the demo execution is successful
+data/raw/utt601.wav,this project implements automatic speech recognition
+data/raw/utt602.wav,the model converts spoken audio into text
+data/raw/utt603.wav,the demo runs efficiently on cpu
+data/raw/utt604.wav,the system maintains stable behavior
+data/raw/utt605.wav,the transcription output is readable
+data/raw/utt606.wav,the output text is produced in real time
+data/raw/utt607.wav,the model handles continuous speech input
+data/raw/utt608.wav,the system avoids manual transcription steps
+data/raw/utt609.wav,the demo shows practical system behavior
+data/raw/utt610.wav,the project follows vtu evaluation norms
+data/raw/utt611.wav,the model learns speech characteristics
+data/raw/utt612.wav,the training process is clearly defined
+data/raw/utt613.wav,the inference stage works smoothly
+data/raw/utt614.wav,the output depends on speech pronunciation
+data/raw/utt615.wav,this solution is effective and practical
+data/raw/utt616.wav,the system supports multiple speakers
+data/raw/utt617.wav,the demo explanation is clear
+data/raw/utt618.wav,the project documentation is complete
+data/raw/utt619.wav,the system recognizes spoken phrases
+data/raw/utt620.wav,the model processes speech sequences
+data/raw/utt621.wav,cnn and lstm cooperate for speech recognition
+data/raw/utt622.wav,the architecture supports temporal modeling
+data/raw/utt623.wav,the model processes sequential audio input
+data/raw/utt624.wav,the network learns useful speech features
+data/raw/utt625.wav,the system processes natural spoken language
+data/raw/utt626.wav,the model improves with more training samples
+data/raw/utt627.wav,the system adapts to speech variation
+data/raw/utt628.wav,the demo output remains stable
+data/raw/utt629.wav,the project meets assessment criteria
+data/raw/utt630.wav,the system is fully functional
+data/raw/utt631.wav,the output text matches spoken content
+data/raw/utt632.wav,the transcription quality is acceptable
+data/raw/utt633.wav,the model outputs character sequences
+data/raw/utt634.wav,the system handles background noise
+data/raw/utt635.wav,the demo works across different speakers
+data/raw/utt636.wav,the project demonstrates system effectiveness
+data/raw/utt637.wav,the system is ready for final evaluation
+data/raw/utt638.wav,the model generalizes to unseen speech
+data/raw/utt639.wav,the demo results are satisfactory
+data/raw/utt640.wav,the project objectives are achieved
+data/raw/utt641.wav,the system converts spoken language into text
+data/raw/utt642.wav,the model processes acoustic representations
+data/raw/utt643.wav,the demo supports live speech testing
+data/raw/utt644.wav,the system operates as expected
+data/raw/utt645.wav,the model accuracy improves gradually
+data/raw/utt646.wav,the demo runs without errors
+data/raw/utt647.wav,the system processes real world speech
+data/raw/utt648.wav,the project is ready for submission
+data/raw/utt649.wav,the output text is meaningful
+data/raw/utt650.wav,thank you
+data/raw/utt651.wav,speech recognition systems convert audio into text
+data/raw/utt652.wav,this system accurately recognizes spoken language
+data/raw/utt653.wav,the project demonstrates automatic speech recognition
+data/raw/utt654.wav,the model processes real world speech signals
+data/raw/utt655.wav,the system recognizes continuous spoken language
+data/raw/utt656.wav,the demo converts voice input into text
+data/raw/utt657.wav,the system processes microphone audio
+data/raw/utt658.wav,speech to text applications are widely used
+data/raw/utt659.wav,the system understands spoken commands
+data/raw/utt660.wav,the model converts speech signals to text
+data/raw/utt661.wav,this project uses cnn lstm architecture
+data/raw/utt662.wav,the system applies deep learning techniques
+data/raw/utt663.wav,the demo shows stable recognition results
+data/raw/utt664.wav,the system performs speech recognition tasks
+data/raw/utt665.wav,the project follows evaluation guidelines
+data/raw/utt666.wav,the demo demonstrates consistent output
+data/raw/utt667.wav,the system design is reliable and simple
+data/raw/utt668.wav,the demo runs smoothly during execution
+data/raw/utt669.wav,the system output is clear and readable
+data/raw/utt670.wav,the project is ready for review
+data/raw/utt671.wav,cnn extracts important acoustic features
+data/raw/utt672.wav,cnn processes frequency information
+data/raw/utt673.wav,cnn improves speech feature quality
+data/raw/utt674.wav,cnn handles variation in audio input
+data/raw/utt675.wav,cnn supports effective speech analysis
+data/raw/utt676.wav,cnn processes short duration audio
+data/raw/utt677.wav,cnn improves recognition accuracy
+data/raw/utt678.wav,cnn contributes to robust performance
+data/raw/utt679.wav,cnn enhances feature representation
+data/raw/utt680.wav,cnn is suitable for audio processing
+data/raw/utt681.wav,lstm captures temporal information
+data/raw/utt682.wav,lstm processes sequences across time
+data/raw/utt683.wav,lstm learns dependencies in speech
+data/raw/utt684.wav,lstm improves temporal prediction
+data/raw/utt685.wav,lstm handles long sequences effectively
+data/raw/utt686.wav,lstm processes variable length speech
+data/raw/utt687.wav,lstm supports continuous recognition
+data/raw/utt688.wav,lstm improves model stability
+data/raw/utt689.wav,lstm models speech dynamics
+data/raw/utt690.wav,lstm is effective for sequence tasks
+data/raw/utt691.wav,the model uses ctc decoding
+data/raw/utt692.wav,ctc aligns speech with text
+data/raw/utt693.wav,the model predicts output characters
+data/raw/utt694.wav,the transcription output is understandable
+data/raw/utt695.wav,the system performs reliably under load
+data/raw/utt696.wav,the demo output appears quickly
+data/raw/utt697.wav,the system adapts to different speakers
+data/raw/utt698.wav,the model generalizes to unseen speech
+data/raw/utt699.wav,the demo results remain consistent
+data/raw/utt700.wav,the project implementation is complete
+data/raw/utt701.wav,this system performs automatic speech recognition tasks
+data/raw/utt702.wav,the model converts spoken speech into text
+data/raw/utt703.wav,the demo processes live speech input
+data/raw/utt704.wav,the system recognizes natural spoken language
+data/raw/utt705.wav,the model processes audio signals in real time
+data/raw/utt706.wav,the system converts voice input to text
+data/raw/utt707.wav,speech recognition systems are widely applied
+data/raw/utt708.wav,the system understands continuous speech
+data/raw/utt709.wav,the model converts spoken audio signals
+data/raw/utt710.wav,the demo supports live transcription
+data/raw/utt711.wav,this project applies cnn lstm based models
+data/raw/utt712.wav,the system uses deep learning for recognition
+data/raw/utt713.wav,the demo works efficiently on cpu
+data/raw/utt714.wav,the system runs smoothly without delay
+data/raw/utt715.wav,the demo shows readable transcription output
+data/raw/utt716.wav,the project follows defined methodology
+data/raw/utt717.wav,the system is ready for assessment
+data/raw/utt718.wav,the demo output remains stable
+data/raw/utt719.wav,the system is simple to use
+data/raw/utt720.wav,the project satisfies evaluation criteria
+data/raw/utt721.wav,cnn extracts useful acoustic information
+data/raw/utt722.wav,cnn processes time frequency features
+data/raw/utt723.wav,cnn improves learning of speech features
+data/raw/utt724.wav,cnn handles noise variations in audio
+data/raw/utt725.wav,cnn learns discriminative representations
+data/raw/utt726.wav,cnn processes short time audio segments
+data/raw/utt727.wav,cnn improves recognition robustness
+data/raw/utt728.wav,cnn supports effective feature extraction
+data/raw/utt729.wav,cnn enhances overall system accuracy
+data/raw/utt730.wav,cnn is effective for audio analysis
+data/raw/utt731.wav,lstm models temporal speech patterns
+data/raw/utt732.wav,lstm processes speech sequences over time
+data/raw/utt733.wav,lstm learns long term dependencies
+data/raw/utt734.wav,lstm captures speech timing information
+data/raw/utt735.wav,lstm improves sequence modeling accuracy
+data/raw/utt736.wav,lstm handles variable length utterances
+data/raw/utt737.wav,lstm processes continuous audio input
+data/raw/utt738.wav,lstm supports temporal prediction
+data/raw/utt739.wav,lstm improves recognition consistency
+data/raw/utt740.wav,lstm is suitable for speech sequences
+data/raw/utt741.wav,the model outputs character level predictions
+data/raw/utt742.wav,the transcription result is clear
+data/raw/utt743.wav,the system avoids rule based transcription
+data/raw/utt744.wav,the model learns from training examples
+data/raw/utt745.wav,the output depends on input speech clarity
+data/raw/utt746.wav,the system performs reliably in practice
+data/raw/utt747.wav,the demo results are consistent
+data/raw/utt748.wav,the project demonstrates real world feasibility
+data/raw/utt749.wav,the system is ready for final demo
+data/raw/utt750.wav,the demo execution completes successfully
+data/raw/utt751.wav,this project demonstrates automatic speech to text
+data/raw/utt752.wav,the model converts spoken audio signals into text
+data/raw/utt753.wav,the demo runs efficiently under cpu constraints
+data/raw/utt754.wav,the system maintains stable transcription
+data/raw/utt755.wav,the output text is readable and clear
+data/raw/utt756.wav,the transcription is produced in real time
+data/raw/utt757.wav,the model handles continuous spoken input
+data/raw/utt758.wav,the system avoids manual speech transcription
+data/raw/utt759.wav,the demo shows practical deployment
+data/raw/utt760.wav,the project follows vtu evaluation standards
+data/raw/utt761.wav,the model learns useful speech representations
+data/raw/utt762.wav,the training process is systematic and controlled
+data/raw/utt763.wav,the inference stage operates smoothly
+data/raw/utt764.wav,the output depends on speaker pronunciation
+data/raw/utt765.wav,this solution is effective for speech recognition
+data/raw/utt766.wav,the system supports different speakers
+data/raw/utt767.wav,the demo explanation is easy to follow
+data/raw/utt768.wav,the project documentation is complete and clear
+data/raw/utt769.wav,the system recognizes spoken phrases accurately
+data/raw/utt770.wav,the model processes sequential speech data
+data/raw/utt771.wav,cnn and lstm cooperate effectively for recognition
+data/raw/utt772.wav,the architecture supports temporal sequence learning
+data/raw/utt773.wav,the model processes time based audio features
+data/raw/utt774.wav,the network learns discriminative speech features
+data/raw/utt775.wav,the system processes natural spoken language
+data/raw/utt776.wav,the model improves as more data is added
+data/raw/utt777.wav,the system adapts to variations in speech
+data/raw/utt778.wav,the demo output remains stable
+data/raw/utt779.wav,the project meets assessment requirements
+data/raw/utt780.wav,the system is fully operational
+data/raw/utt781.wav,the output text matches the spoken content
+data/raw/utt782.wav,the transcription quality is acceptable for demo
+data/raw/utt783.wav,the model outputs character sequences correctly
+data/raw/utt784.wav,the system handles light background noise
+data/raw/utt785.wav,the demo works across different users
+data/raw/utt786.wav,the project demonstrates overall effectiveness
+data/raw/utt787.wav,the system is ready for final evaluation
+data/raw/utt788.wav,the model generalizes to unseen speech samples
+data/raw/utt789.wav,the demo results are satisfactory
+data/raw/utt790.wav,the project objectives are met
+data/raw/utt791.wav,the system converts spoken language to text
+data/raw/utt792.wav,the model processes acoustic feature representations
+data/raw/utt793.wav,the demo supports live speech testing
+data/raw/utt794.wav,the system operates as expected
+data/raw/utt795.wav,the model accuracy improves with training
+data/raw/utt796.wav,the demo runs without runtime errors
+data/raw/utt797.wav,the system processes real world speech input
+data/raw/utt798.wav,the project is ready for submission
+data/raw/utt799.wav,the output text is meaningful
+data/raw/utt800.wav,thank you
+data/raw/utt801.wav,speech recognition systems transform audio into text
+data/raw/utt802.wav,this system converts spoken language accurately
+data/raw/utt803.wav,the project focuses on real time speech recognition
+data/raw/utt804.wav,the model processes continuous speech signals
+data/raw/utt805.wav,the system recognizes spoken sentences clearly
+data/raw/utt806.wav,the demo converts voice input into readable text
+data/raw/utt807.wav,the system processes live microphone audio
+data/raw/utt808.wav,speech to text technology has many uses
+data/raw/utt809.wav,the system understands spoken phrases
+data/raw/utt810.wav,the model converts audio signals into text
+data/raw/utt811.wav,this project applies cnn lstm based learning
+data/raw/utt812.wav,the system uses deep learning architectures
+data/raw/utt813.wav,the demo produces stable transcription output
+data/raw/utt814.wav,the system performs speech recognition reliably
+data/raw/utt815.wav,the project follows defined academic guidelines
+data/raw/utt816.wav,the demo demonstrates consistent performance
+data/raw/utt817.wav,the system design is robust and simple
+data/raw/utt818.wav,the demo runs smoothly during testing
+data/raw/utt819.wav,the system output is clear and accurate
+data/raw/utt820.wav,the project is ready for final evaluation
+data/raw/utt821.wav,cnn extracts important speech information
+data/raw/utt822.wav,cnn processes time frequency representations
+data/raw/utt823.wav,cnn improves learning of acoustic features
+data/raw/utt824.wav,cnn handles variation in speech input
+data/raw/utt825.wav,cnn supports effective speech processing
+data/raw/utt826.wav,cnn processes short audio segments
+data/raw/utt827.wav,cnn improves recognition stability
+data/raw/utt828.wav,cnn contributes to robust performance
+data/raw/utt829.wav,cnn enhances feature quality
+data/raw/utt830.wav,cnn is suitable for speech analysis
+data/raw/utt831.wav,lstm captures temporal dependencies in speech
+data/raw/utt832.wav,lstm processes sequences across time
+data/raw/utt833.wav,lstm learns speech related dependencies
+data/raw/utt834.wav,lstm improves temporal prediction accuracy
+data/raw/utt835.wav,lstm handles long speech sequences
+data/raw/utt836.wav,lstm processes variable duration utterances
+data/raw/utt837.wav,lstm supports continuous speech recognition
+data/raw/utt838.wav,lstm improves overall model stability
+data/raw/utt839.wav,lstm models temporal speech patterns
+data/raw/utt840.wav,lstm is effective for sequence learning
+data/raw/utt841.wav,the model uses ctc for decoding
+data/raw/utt842.wav,ctc aligns speech frames with text
+data/raw/utt843.wav,the model predicts character outputs
+data/raw/utt844.wav,the transcription output is readable
+data/raw/utt845.wav,the system performs reliably in practice
+data/raw/utt846.wav,the demo output appears quickly
+data/raw/utt847.wav,the system adapts to new speakers
+data/raw/utt848.wav,the model generalizes well to unseen data
+data/raw/utt849.wav,the demo results are consistent
+data/raw/utt850.wav,the project implementation is complete
+data/raw/utt851.wav,this system performs speech recognition accurately
+data/raw/utt852.wav,the model converts continuous speech into text
+data/raw/utt853.wav,the demo processes live audio input smoothly
+data/raw/utt854.wav,the system recognizes spoken phrases
+data/raw/utt855.wav,the model processes speech signals efficiently
+data/raw/utt856.wav,the system converts voice audio to text
+data/raw/utt857.wav,speech recognition is useful for many applications
+data/raw/utt858.wav,the system understands spoken commands
+data/raw/utt859.wav,the model converts speech audio into text
+data/raw/utt860.wav,the demo supports live speech transcription
+data/raw/utt861.wav,this project uses cnn lstm based architecture
+data/raw/utt862.wav,the system applies deep learning effectively
+data/raw/utt863.wav,the demo works reliably under cpu constraints
+data/raw/utt864.wav,the system runs continuously without failure
+data/raw/utt865.wav,the demo shows clear transcription output
+data/raw/utt866.wav,the project follows academic evaluation standards
+data/raw/utt867.wav,the system is prepared for final demo
+data/raw/utt868.wav,the demo output remains stable
+data/raw/utt869.wav,the system is simple to operate
+data/raw/utt870.wav,the project satisfies final year requirements
+data/raw/utt871.wav,cnn extracts discriminative acoustic features
+data/raw/utt872.wav,cnn processes time domain information
+data/raw/utt873.wav,cnn improves robustness to noise
+data/raw/utt874.wav,cnn handles variability in speech input
+data/raw/utt875.wav,cnn learns meaningful representations
+data/raw/utt876.wav,cnn processes short time speech frames
+data/raw/utt877.wav,cnn improves recognition accuracy
+data/raw/utt878.wav,cnn supports reliable feature extraction
+data/raw/utt879.wav,cnn enhances overall system performance
+data/raw/utt880.wav,cnn is effective for speech analysis tasks
+data/raw/utt881.wav,lstm models long term speech dependencies
+data/raw/utt882.wav,lstm processes sequential speech information
+data/raw/utt883.wav,lstm learns temporal relationships in speech
+data/raw/utt884.wav,lstm captures speech timing patterns
+data/raw/utt885.wav,lstm improves sequence prediction quality
+data/raw/utt886.wav,lstm handles variable length utterances well
+data/raw/utt887.wav,lstm processes continuous speech data
+data/raw/utt888.wav,lstm supports temporal modeling
+data/raw/utt889.wav,lstm improves recognition consistency
+data/raw/utt890.wav,lstm is suitable for speech recognition tasks
+data/raw/utt891.wav,the model outputs character level sequences
+data/raw/utt892.wav,the transcription result is understandable
+data/raw/utt893.wav,the system avoids rule based transcription
+data/raw/utt894.wav,the model learns effectively from data
+data/raw/utt895.wav,the output depends on speech clarity
+data/raw/utt896.wav,the system performs consistently in practice
+data/raw/utt897.wav,the demo results are reliable
+data/raw/utt898.wav,the project demonstrates practical viability
+data/raw/utt899.wav,the system is ready for demonstration
+data/raw/utt900.wav,the demo execution is successful
+data/raw/utt901.wav,this project demonstrates real time speech recognition

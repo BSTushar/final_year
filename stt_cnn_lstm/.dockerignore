@@ -1,0 +1,10 @@
+# Keep image smaller / avoid copying local junk
+venv/
+.venv/
+**/__pycache__/
+**/*.pyc
+.git/
+.gitignore
+*.md
+Dockerfile
+.dockerignore

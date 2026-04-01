@@ -1,0 +1,39 @@
+### On demo day – minimal commands to run
+
+From a fresh boot, do this:
+
+1. **Open PowerShell**
+
+2. **Go to your project**
+
+```powershell
+cd C:\Users\Lenovo\Desktop\vtu-vtu\stt_cnn_lstm
+```
+
+3. **Activate your virtual environment**
+
+```powershell
+.\venv\Scripts\activate
+```
+
+4. **(Optional) Regenerate figures** — only if plots/diagrams are missing
+
+```powershell
+python -m src.plots
+```
+
+5. **Start the live demo web app**
+
+```powershell
+python -m web.app
+```
+
+6. **Open the browser and run the demo**
+
+- Go to: `http://127.0.0.1:5000/`
+- Click **Start Recording**, speak, click **Stop**
+- Transcription + history + plots/diagrams are on that page
+
+**Note:** The page uses `/infer_vosk` (needs `pretrained_models/vosk-en`). For your trained CNN–LSTM, use `/infer` or change the fetch URL in `web/templates/index.html` to `/infer`.
+
+That's all you need on demo day.
