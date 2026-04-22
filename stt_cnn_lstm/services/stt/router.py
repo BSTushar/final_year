@@ -1,7 +1,7 @@
 import json
 import logging
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from typing import Dict, Tuple
 
@@ -139,6 +139,14 @@ class HybridSTTRouter:
         fallback = self.fallback_provider.transcribe(raw_bytes, timeout_s=self.config.fallback_timeout_s)
         fallback.metadata["fallback_reason"] = reason
 
+        def _with_local_audio_metrics(result: STTResult) -> STTResult:
+            """Fallback APIs do not report level/duration; reuse values from local preprocessing."""
+            return replace(
+                result,
+                noise_db=result.noise_db if result.noise_db is not None else local.noise_db,
+                duration_sec=result.duration_sec if result.duration_sec is not None else local.duration_sec,
+            )
+
         if fallback.error and local.transcription:
             self._log_event(
                 "fallback_failed",
@@ -155,5 +163,5 @@ class HybridSTTRouter:
                 local.warning + " | " if local.warning else ""
             ) + f"Fallback unavailable ({reason}): {fallback.error}. Returned offline result."
             return local
-        return fallback
+        return _with_local_audio_metrics(fallback)
 
