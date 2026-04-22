@@ -1402,7 +1402,7 @@
       var resultEntry = {
         text: resultText,
         noiseDb: typeof data.noise_db === "number" ? data.noise_db : null,
-        confidence: typeof data.confidence === "number" && data.confidence > 0 ? data.confidence : null,
+        confidence: typeof data.confidence === "number" && isFinite(data.confidence) ? data.confidence : null,
         durationSec: typeof data.duration_sec === "number" ? data.duration_sec : null
       };
 

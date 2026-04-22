@@ -140,11 +140,12 @@ class HybridSTTRouter:
         fallback.metadata["fallback_reason"] = reason
 
         def _with_local_audio_metrics(result: STTResult) -> STTResult:
-            """Fallback APIs do not report level/duration; reuse values from local preprocessing."""
+            """Fallback APIs omit level, duration, and confidence; reuse local Vosk signals."""
             return replace(
                 result,
                 noise_db=result.noise_db if result.noise_db is not None else local.noise_db,
                 duration_sec=result.duration_sec if result.duration_sec is not None else local.duration_sec,
+                confidence=result.confidence if result.confidence is not None else local.confidence,
             )
 
         if fallback.error and local.transcription:
