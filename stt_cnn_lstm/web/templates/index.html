@@ -28,6 +28,9 @@
     --radius-md: 14px;
     --radius-lg: 20px;
     --radius-xl: 28px;
+    --layout-max: 740px;
+    --layout-pad: 1.5rem;
+    --card-pad: 24px;
   }
 
   html { font-size: 16px; }
@@ -41,10 +44,6 @@
   }
 
   nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 3rem;
     height: 52px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(20px);
@@ -53,6 +52,17 @@
     position: sticky;
     top: 0;
     z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: var(--layout-max);
+    margin: 0 auto;
+    padding: 0 var(--layout-pad);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
   }
 
   .nav-logo {
@@ -98,8 +108,8 @@
 
   .hero {
     text-align: center;
-    padding: 80px 3rem 60px;
-    max-width: 740px;
+    padding: 80px var(--layout-pad) 56px;
+    max-width: var(--layout-max);
     margin: 0 auto;
   }
 
@@ -109,7 +119,7 @@
     color: var(--blue);
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   .hero-title {
@@ -118,7 +128,7 @@
     color: var(--gray-900);
     letter-spacing: -0.03em;
     line-height: 1.1;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .hero-title em {
@@ -134,21 +144,25 @@
     letter-spacing: -0.01em;
   }
 
-  .stats-row {
-    display: flex;
-    justify-content: center;
-    gap: 1px;
+  .stats-outer {
     background: var(--gray-200);
     border-top: 0.5px solid var(--gray-200);
     border-bottom: 0.5px solid var(--gray-200);
-    margin-bottom: 0;
+  }
+
+  .stats-inner {
+    max-width: var(--layout-max);
+    margin: 0 auto;
+    padding: 0 var(--layout-pad);
+    display: flex;
+    gap: 1px;
   }
 
   .stat-card {
     flex: 1;
-    max-width: 220px;
+    min-width: 0;
     background: var(--white);
-    padding: 20px 24px;
+    padding: 20px var(--card-pad);
     text-align: center;
   }
 
@@ -158,7 +172,12 @@
     color: var(--gray-900);
     letter-spacing: -0.02em;
     line-height: 1;
-    margin-bottom: 5px;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    font-variant-numeric: tabular-nums;
   }
 
   .stat-label {
@@ -170,17 +189,19 @@
   }
 
   .main-panel {
-    max-width: 740px;
+    max-width: var(--layout-max);
     margin: 48px auto;
-    padding: 0 1.5rem;
+    padding: 0 var(--layout-pad);
+    width: 100%;
   }
 
   .waveform-card {
     background: var(--gray-50);
     border: 0.5px solid var(--gray-200);
     border-radius: var(--radius-xl);
-    padding: 24px;
+    padding: var(--card-pad);
     margin-bottom: 16px;
+    width: 100%;
   }
 
   .section-label {
@@ -194,6 +215,9 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  .section-label--tight { margin-bottom: 10px; }
+  .section-label--flush { margin-bottom: 0; }
 
   .rec-badge {
     display: none;
@@ -227,9 +251,10 @@
     background: var(--white);
     border: 0.5px solid var(--gray-200);
     border-radius: var(--radius-xl);
-    padding: 28px;
+    padding: var(--card-pad);
     margin-bottom: 16px;
     min-height: 100px;
+    width: 100%;
   }
 
   .transcript-text {
@@ -260,9 +285,27 @@
   .controls {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: nowrap;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .controls-actions {
+    display: flex;
+    align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 16px;
+    min-width: 0;
+  }
+
+  .controls-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    margin-left: auto;
   }
 
   .btn-record {
@@ -325,9 +368,10 @@
   }
 
   .noise-info {
-    margin-left: auto;
     font-size: 13px;
     color: var(--gray-500);
+    white-space: nowrap;
+    text-align: right;
   }
 
   .noise-info b { color: var(--gray-900); font-weight: 500; }
@@ -336,6 +380,9 @@
     font-size: 13px;
     color: var(--gray-300);
     letter-spacing: 0.01em;
+    white-space: nowrap;
+    min-width: 4.5rem;
+    text-align: right;
   }
 
   .pipeline-card {
@@ -348,13 +395,15 @@
     opacity: 0;
     transform: translateY(-8px);
     transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease, padding 0.3s ease;
-    padding: 0 24px;
+    padding: 0 var(--card-pad);
+    width: 100%;
+    box-sizing: border-box;
   }
   .pipeline-card.show {
     max-height: 200px;
     opacity: 1;
     transform: translateY(0);
-    padding: 22px 24px;
+    padding: 22px var(--card-pad);
   }
 
   .pipeline-steps {
@@ -408,9 +457,11 @@
     gap: 12px;
     background: #fffbf0;
     border: 0.5px solid #f0d890;
-    border-radius: var(--radius-md);
-    padding: 14px 16px;
+    border-radius: var(--radius-xl);
+    padding: var(--card-pad);
     margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .notice-icon {
@@ -438,13 +489,15 @@
     border-radius: var(--radius-xl);
     overflow: hidden;
     margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .history-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 22px;
+    padding: 18px var(--card-pad);
     border-bottom: 0.5px solid var(--gray-100);
   }
 
@@ -477,7 +530,7 @@
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    padding: 14px 22px;
+    padding: 14px var(--card-pad);
     border-bottom: 0.5px solid var(--gray-100);
   }
   .h-row:last-child { border-bottom: none; }
@@ -526,9 +579,11 @@
     background: var(--gray-50);
     border: 0.5px solid var(--gray-200);
     border-radius: var(--radius-xl);
-    padding: 24px;
+    padding: var(--card-pad);
     margin-bottom: 16px;
     overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .arch-flow {
@@ -567,8 +622,13 @@
 
   footer {
     text-align: center;
-    padding: 40px 2rem 60px;
+    padding: 40px var(--layout-pad) 60px;
     border-top: 0.5px solid var(--gray-200);
+  }
+
+  .footer-inner {
+    max-width: var(--layout-max);
+    margin: 0 auto;
   }
 
   .footer-made {
@@ -595,11 +655,15 @@
     background: var(--gray-50);
     border-top: 0.5px solid var(--gray-200);
     border-bottom: 0.5px solid var(--gray-200);
-    padding: 9px 0;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
   }
 
   .ticker-inner {
     display: flex;
+    align-items: center;
     white-space: nowrap;
     animation: tickerScroll 40s linear infinite;
   }
@@ -633,11 +697,19 @@
   }
 
   @media (max-width: 600px) {
-    nav { padding: 0 1.25rem; }
-    .hero { padding: 52px 1.5rem 40px; }
-    .stats-row { flex-direction: column; gap: 0; }
-    .main-panel { padding: 0 1rem; margin: 28px auto; }
-    .noise-info { margin-left: 0; width: 100%; }
+    :root { --layout-pad: 1.1rem; }
+    .hero { padding: 52px var(--layout-pad) 40px; }
+    .stats-inner { flex-direction: column; gap: 1px; }
+    .main-panel { margin: 28px auto; }
+    .controls {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .controls-meta {
+      margin-left: 0;
+      width: 100%;
+      justify-content: flex-end;
+    }
     .arch-flow { flex-wrap: wrap; gap: 6px; }
     .arch-arrow { display: none; }
   }
@@ -646,11 +718,13 @@
 <body>
 
 <nav>
-  <span class="nav-logo">CNN-LSTM Speech</span>
-  <div class="nav-pills">
-    <span class="nav-pill">VTU 2026</span>
-    <span class="nav-pill">CPU-only</span>
-    <span class="nav-pill live"><span class="live-dot"></span>Live Demo</span>
+  <div class="nav-inner">
+    <span class="nav-logo">CNN-LSTM Speech</span>
+    <div class="nav-pills">
+      <span class="nav-pill">VTU 2026</span>
+      <span class="nav-pill">CPU-only</span>
+      <span class="nav-pill live"><span class="live-dot"></span>Live Demo</span>
+    </div>
   </div>
 </nav>
 
@@ -675,10 +749,12 @@
   <p class="hero-sub">A self-trained CNN-LSTM model that recognises speech accurately — even with background noise. Runs entirely on CPU.</p>
 </section>
 
-<div class="stats-row">
-  <div class="stat-card"><div class="stat-num" id="stat-count">0</div><div class="stat-label">Recognitions</div></div>
-  <div class="stat-card"><div class="stat-num" id="stat-noise">—</div><div class="stat-label">Noise level dB</div></div>
-  <div class="stat-card"><div class="stat-num" id="stat-dur">—</div><div class="stat-label">Avg duration</div></div>
+<div class="stats-outer">
+  <div class="stats-inner">
+    <div class="stat-card"><div class="stat-num" id="stat-count">0</div><div class="stat-label">Recognitions</div></div>
+    <div class="stat-card"><div class="stat-num" id="stat-noise">—</div><div class="stat-label">Noise level dB</div></div>
+    <div class="stat-card"><div class="stat-num" id="stat-dur">—</div><div class="stat-label">Avg duration</div></div>
+  </div>
 </div>
 
 <div class="main-panel">
@@ -692,31 +768,35 @@
   </div>
 
   <div class="transcript-card">
-    <div class="section-label" style="margin-bottom:10px">Transcript</div>
+    <div class="section-label section-label--tight">Transcript</div>
     <div class="transcript-text empty" id="transcript-text">Start recording to begin…</div>
   </div>
 
   <div class="controls">
-    <button type="button" class="btn-record" id="rec-btn">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-        <rect x="4.5" y="1" width="6" height="8.5" rx="3" fill="currentColor"/>
-        <path d="M2 7.5a5.5 5.5 0 0 0 11 0" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        <line x1="7.5" y1="13" x2="7.5" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="5" y1="13.5" x2="10" y2="13.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-      </svg>
-      <span id="rec-label">Start recording</span>
-    </button>
-    <button type="button" class="btn-ghost" id="clear-btn">Clear</button>
-    <select class="mode-select" id="mode-select" aria-label="Recognition mode">
-      <option value="offline" {% if default_mode == "offline" %}selected{% endif %}>Offline Mode</option>
-      <option value="enhanced" {% if default_mode != "offline" %}selected{% endif %}>Enhanced Accuracy</option>
-    </select>
-    <span class="noise-info">Noise: <b id="noise-display">— dB</b></span>
-    <span class="status-text" id="status">Idle</span>
+    <div class="controls-actions">
+      <button type="button" class="btn-record" id="rec-btn">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <rect x="4.5" y="1" width="6" height="8.5" rx="3" fill="currentColor"/>
+          <path d="M2 7.5a5.5 5.5 0 0 0 11 0" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <line x1="7.5" y1="13" x2="7.5" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="5" y1="13.5" x2="10" y2="13.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span id="rec-label">Start recording</span>
+      </button>
+      <button type="button" class="btn-ghost" id="clear-btn">Clear</button>
+      <select class="mode-select" id="mode-select" aria-label="Recognition mode">
+        <option value="offline" {% if default_mode == "offline" %}selected{% endif %}>Offline Mode</option>
+        <option value="enhanced" {% if default_mode != "offline" %}selected{% endif %}>Enhanced Accuracy</option>
+      </select>
+    </div>
+    <div class="controls-meta">
+      <span class="noise-info">Noise: <b id="noise-display">— dB</b></span>
+      <span class="status-text" id="status">Idle</span>
+    </div>
   </div>
 
   <div class="pipeline-card" id="pipeline-card">
-    <div class="section-label" style="margin-bottom:0">Processing pipeline</div>
+    <div class="section-label section-label--flush">Processing pipeline</div>
     <div class="pipeline-steps">
       <div class="pipeline-step" data-step="0">Mic capture</div>
       <span class="pipeline-arrow">›</span>
@@ -764,8 +844,10 @@
 </div>
 
 <footer>
-  <div class="footer-made">Made with ♥ by</div>
-  <div class="team-name-display" id="team-name">Abhimanyu Tiwari</div>
+  <div class="footer-inner">
+    <div class="footer-made">Made with ♥ by</div>
+    <div class="team-name-display" id="team-name">Abhimanyu Tiwari</div>
+  </div>
 </footer>
 
 <script>
