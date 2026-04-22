@@ -28,7 +28,7 @@
     --radius-md: 14px;
     --radius-lg: 20px;
     --radius-xl: 28px;
-    --layout-max: 740px;
+    --layout-max: 920px;
     --layout-pad: 1.5rem;
     --card-pad: 24px;
   }
@@ -37,10 +37,19 @@
 
   body {
     font-family: var(--font);
-    background: var(--white);
+    background: var(--gray-100);
     color: var(--gray-900);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+  }
+
+  .page-shell {
+    width: 100%;
+    max-width: var(--layout-max);
+    margin: 0 auto;
+    background: var(--white);
+    min-height: 100vh;
+    box-shadow: 0 0 0 0.5px var(--gray-200);
   }
 
   nav {
@@ -55,8 +64,6 @@
   }
 
   .nav-inner {
-    max-width: var(--layout-max);
-    margin: 0 auto;
     padding: 0 var(--layout-pad);
     height: 100%;
     display: flex;
@@ -109,8 +116,6 @@
   .hero {
     text-align: center;
     padding: 80px var(--layout-pad) 56px;
-    max-width: var(--layout-max);
-    margin: 0 auto;
   }
 
   .hero-eyebrow {
@@ -151,8 +156,6 @@
   }
 
   .stats-inner {
-    max-width: var(--layout-max);
-    margin: 0 auto;
     padding: 0 var(--layout-pad);
     display: flex;
     gap: 1px;
@@ -189,8 +192,7 @@
   }
 
   .main-panel {
-    max-width: var(--layout-max);
-    margin: 48px auto;
+    margin: 48px 0;
     padding: 0 var(--layout-pad);
     width: 100%;
   }
@@ -626,11 +628,6 @@
     border-top: 0.5px solid var(--gray-200);
   }
 
-  .footer-inner {
-    max-width: var(--layout-max);
-    margin: 0 auto;
-  }
-
   .footer-made {
     font-size: 12px;
     color: var(--gray-300);
@@ -700,7 +697,7 @@
     :root { --layout-pad: 1.1rem; }
     .hero { padding: 52px var(--layout-pad) 40px; }
     .stats-inner { flex-direction: column; gap: 1px; }
-    .main-panel { margin: 28px auto; }
+    .main-panel { margin: 28px 0; }
     .controls {
       flex-wrap: wrap;
       align-items: flex-start;
@@ -716,6 +713,8 @@
 </style>
 </head>
 <body>
+
+<div class="page-shell">
 
 <nav>
   <div class="nav-inner">
@@ -849,6 +848,8 @@
     <div class="team-name-display" id="team-name">Abhimanyu Tiwari</div>
   </div>
 </footer>
+
+</div>
 
 <script>
   let mediaRecorder = null, audioChunks = [], activeStream = null, isRecording = false;
