@@ -622,6 +622,68 @@
     flex-shrink: 0;
   }
 
+  .accuracy-chart-card {
+    background: var(--gray-50);
+    border: 0.5px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--card-pad);
+    margin: 0 var(--layout-pad) 8px;
+    width: calc(100% - 2 * var(--layout-pad));
+    max-width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+
+  .accuracy-chart-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .accuracy-chart-card.is-hidden {
+    display: none;
+  }
+
+  .accuracy-chart-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .accuracy-chart-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .accuracy-chart-hint {
+    font-size: 12px;
+    color: var(--gray-300);
+    font-weight: 400;
+  }
+
+  .accuracy-chart-wrap {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    border: 0.5px solid var(--gray-200);
+    overflow: hidden;
+  }
+
+  .accuracy-chart-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
   footer {
     text-align: center;
     padding: 40px var(--layout-pad) 60px;
@@ -711,6 +773,7 @@
     }
     .arch-flow { flex-wrap: wrap; gap: 6px; }
     .arch-arrow { display: none; }
+    .accuracy-chart-wrap { height: 200px; }
   }
 </style>
 </head>
@@ -844,6 +907,16 @@
 
 </div>
 
+<div class="accuracy-chart-card is-hidden" id="accuracy-chart-card" aria-hidden="true">
+  <div class="accuracy-chart-head">
+    <span class="accuracy-chart-title">Accuracy vs noise level</span>
+    <span class="accuracy-chart-hint" id="accuracy-chart-hint">Session recognitions</span>
+  </div>
+  <div class="accuracy-chart-wrap">
+    <canvas class="accuracy-chart-canvas" id="accuracy-chart" aria-label="Scatter plot of recognition confidence versus noise level in decibels"></canvas>
+  </div>
+</div>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-made">Made with ♥ by</div>
@@ -874,6 +947,14 @@
   const pipelineCard = document.getElementById("pipeline-card");
   const pipeSteps = Array.from(document.querySelectorAll(".pipeline-step"));
   const teamNameEl = document.getElementById("team-name");
+  const accChartCard = document.getElementById("accuracy-chart-card");
+  const accChartHint = document.getElementById("accuracy-chart-hint");
+  const accChartCanvas = document.getElementById("accuracy-chart");
+  const accChartCtx = accChartCanvas.getContext("2d");
+  const accChartDpr = window.devicePixelRatio || 1;
+  var accChartAnimRaf = null;
+  var accChartAnimStart = 0;
+  var accChartAnimDuration = 920;
 
   const canvas = document.getElementById("waveform");
   const ctx = canvas.getContext("2d");
@@ -1023,6 +1104,189 @@
     return Math.abs(noiseDb).toFixed(1) + " dB";
   }
 
+  function accChartPadRange(minV, maxV, padRatio) {
+    if (!isFinite(minV) || !isFinite(maxV)) return [0, 1];
+    if (minV === maxV) {
+      var d = Math.max(Math.abs(minV) * 0.12, 0.5);
+      return [minV - d, maxV + d];
+    }
+    var span = (maxV - minV) * padRatio;
+    return [minV - span, maxV + span];
+  }
+
+  function getAccuracyChartPoints() {
+    var pts = [];
+    for (var i = historyEntries.length - 1; i >= 0; i--) {
+      var e = historyEntries[i];
+      if (typeof e.noiseDb === "number" && typeof e.confidence === "number") {
+        pts.push({ db: e.noiseDb, acc: Math.min(1, Math.max(0, e.confidence)) });
+      }
+    }
+    return pts;
+  }
+
+  function resizeAccuracyChart() {
+    var wrap = accChartCanvas.parentElement;
+    var w = wrap.clientWidth, h = wrap.clientHeight;
+    accChartCanvas.width = Math.max(1, Math.floor(w * accChartDpr));
+    accChartCanvas.height = Math.max(1, Math.floor(h * accChartDpr));
+    accChartCanvas.style.width = w + "px";
+    accChartCanvas.style.height = h + "px";
+    accChartCtx.setTransform(1, 0, 0, 1, 0, 0);
+    accChartCtx.scale(accChartDpr, accChartDpr);
+  }
+
+  function syncAccuracyChartCard() {
+    var n = historyEntries.length;
+    var plottable = getAccuracyChartPoints().length;
+    if (n <= 1) {
+      accChartCard.classList.add("is-hidden");
+      accChartCard.classList.remove("is-visible");
+      accChartCard.setAttribute("aria-hidden", "true");
+      if (accChartAnimRaf) cancelAnimationFrame(accChartAnimRaf);
+      accChartAnimRaf = null;
+      return;
+    }
+    accChartCard.classList.remove("is-hidden");
+    accChartCard.classList.add("is-visible");
+    accChartCard.setAttribute("aria-hidden", "false");
+    accChartHint.textContent = plottable >= 2
+      ? plottable + " points · newer → darker"
+      : "Need two+ recognitions with confidence and level";
+  }
+
+  function drawAccuracyChartFrame(ts) {
+    if (accChartCard.classList.contains("is-hidden")) {
+      accChartAnimRaf = null;
+      return;
+    }
+    var w = accChartCanvas.width / accChartDpr, h = accChartCanvas.height / accChartDpr;
+    accChartCtx.clearRect(0, 0, w, h);
+    var pts = getAccuracyChartPoints();
+    var elapsed = ts - accChartAnimStart;
+    var rawT = Math.min(1, elapsed / accChartAnimDuration);
+    var progress = 1 - Math.pow(1 - rawT, 3);
+
+    accChartCtx.textBaseline = "middle";
+
+    if (pts.length < 2) {
+      accChartCtx.fillStyle = "rgba(142,142,147,0.9)";
+      accChartCtx.font = "13px DM Sans, -apple-system, sans-serif";
+      accChartCtx.textAlign = "center";
+      accChartCtx.fillText(
+        pts.length === 1 ? "Add another recognition with confidence + level" : "Confidence + level needed for each plotted point",
+        w / 2,
+        h / 2
+      );
+      if (rawT < 1) accChartAnimRaf = requestAnimationFrame(drawAccuracyChartFrame);
+      else accChartAnimRaf = null;
+      return;
+    }
+
+    var padL = 46, padR = 14, padT = 20, padB = 36;
+    var pw = w - padL - padR, ph = h - padT - padB;
+
+    var dbs = pts.map(function (p) { return p.db; });
+    var accs = pts.map(function (p) { return p.acc; });
+    var minDb = Math.min.apply(null, dbs), maxDb = Math.max.apply(null, dbs);
+    var minA = Math.min.apply(null, accs), maxA = Math.max.apply(null, accs);
+    var xr = accChartPadRange(minDb, maxDb, 0.1);
+    var yr = accChartPadRange(minA, maxA, 0.1);
+
+    function xScale(db) { return padL + ((db - xr[0]) / (xr[1] - xr[0])) * pw; }
+    function yScale(a) { return padT + ph - ((a - yr[0]) / (yr[1] - yr[0])) * ph; }
+
+    accChartCtx.globalAlpha = 0.4 * progress;
+    accChartCtx.strokeStyle = "#e5e5ea";
+    accChartCtx.lineWidth = 1;
+    for (var gx = 0; gx <= 4; gx++) {
+      var xg = padL + (gx / 4) * pw;
+      accChartCtx.beginPath();
+      accChartCtx.moveTo(xg, padT);
+      accChartCtx.lineTo(xg, padT + ph);
+      accChartCtx.stroke();
+    }
+    for (var gy = 0; gy <= 4; gy++) {
+      var yg = padT + (gy / 4) * ph;
+      accChartCtx.beginPath();
+      accChartCtx.moveTo(padL, yg);
+      accChartCtx.lineTo(padL + pw, yg);
+      accChartCtx.stroke();
+    }
+    accChartCtx.globalAlpha = 1;
+
+    accChartCtx.fillStyle = "rgba(142,142,147,0.95)";
+    accChartCtx.font = "11px DM Sans, -apple-system, sans-serif";
+    accChartCtx.textAlign = "center";
+    accChartCtx.fillText("Noise level (dB FS)", padL + pw / 2, h - 11);
+    accChartCtx.save();
+    accChartCtx.translate(15, padT + ph / 2);
+    accChartCtx.rotate(-Math.PI / 2);
+    accChartCtx.textAlign = "center";
+    accChartCtx.fillText("Accuracy (confidence)", 0, 0);
+    accChartCtx.restore();
+
+    accChartCtx.textAlign = "center";
+    accChartCtx.fillText(xr[0].toFixed(0), padL, h - 24);
+    accChartCtx.fillText(xr[1].toFixed(0), padL + pw, h - 24);
+    accChartCtx.textAlign = "right";
+    accChartCtx.fillText((yr[0] * 100).toFixed(0) + "%", padL - 8, padT + ph);
+    accChartCtx.fillText((yr[1] * 100).toFixed(0) + "%", padL - 8, padT);
+
+    accChartCtx.lineWidth = 2;
+    accChartCtx.strokeStyle = "rgba(0,113,227," + (0.2 + 0.28 * progress) + ")";
+    accChartCtx.lineJoin = "round";
+    accChartCtx.beginPath();
+    for (var li = 0; li < pts.length; li++) {
+      var lx = xScale(pts[li].db), ly = yScale(pts[li].acc);
+      if (li === 0) accChartCtx.moveTo(lx, ly); else accChartCtx.lineTo(lx, ly);
+    }
+    accChartCtx.setLineDash([7, 6]);
+    accChartCtx.lineDashOffset = (1 - progress) * 48;
+    accChartCtx.stroke();
+    accChartCtx.setLineDash([]);
+
+    for (var j = 0; j < pts.length; j++) {
+      var st = Math.min(1, Math.max(0, (progress * (pts.length + 0.35) - j) / 0.72));
+      var bounce = 1 - Math.pow(1 - st, 3);
+      var r = 5.2 * bounce;
+      if (r < 0.12) continue;
+      var px = xScale(pts[j].db), py = yScale(pts[j].acc);
+      var tint = 0.38 + 0.62 * (j / Math.max(1, pts.length - 1));
+      accChartCtx.beginPath();
+      accChartCtx.arc(px, py, r + 8 * (1 - bounce), 0, Math.PI * 2);
+      accChartCtx.fillStyle = "rgba(0,113,227," + (0.1 * bounce) + ")";
+      accChartCtx.fill();
+      accChartCtx.beginPath();
+      accChartCtx.arc(px, py, r, 0, Math.PI * 2);
+      accChartCtx.fillStyle = "rgba(0,113,227," + (0.45 + 0.55 * tint) + ")";
+      accChartCtx.fill();
+      accChartCtx.strokeStyle = "rgba(255,255,255,0.95)";
+      accChartCtx.lineWidth = 1.5;
+      accChartCtx.stroke();
+    }
+
+    if (rawT < 1) accChartAnimRaf = requestAnimationFrame(drawAccuracyChartFrame);
+    else accChartAnimRaf = null;
+  }
+
+  function refreshAccuracyChart() {
+    syncAccuracyChartCard();
+    if (accChartCard.classList.contains("is-hidden")) return;
+    resizeAccuracyChart();
+    accChartAnimStart = performance.now();
+    if (accChartAnimRaf) cancelAnimationFrame(accChartAnimRaf);
+    accChartAnimRaf = requestAnimationFrame(drawAccuracyChartFrame);
+  }
+
+  function redrawAccuracyChartStatic() {
+    if (accChartCard.classList.contains("is-hidden")) return;
+    resizeAccuracyChart();
+    accChartAnimStart = performance.now() - accChartAnimDuration;
+    if (accChartAnimRaf) cancelAnimationFrame(accChartAnimRaf);
+    accChartAnimRaf = requestAnimationFrame(drawAccuracyChartFrame);
+  }
+
   function renderHistory() {
     if (!historyEntries.length) {
       histListEl.innerHTML = '<div class="history-empty">No recognitions yet</div>';
@@ -1045,17 +1309,18 @@
       statNoise.textContent = "—";
       statDur.textContent = "—";
       noiseDisplayEl.textContent = "— dB";
-      return;
+    } else {
+      var noiseArr = historyEntries.filter(function (e) { return typeof e.noiseDb === "number"; });
+      var durArr = historyEntries.filter(function (e) { return typeof e.durationSec === "number"; });
+      statNoise.textContent = noiseArr.length
+        ? Math.abs(noiseArr.reduce(function (a, b) { return a + b.noiseDb; }, 0) / noiseArr.length).toFixed(1)
+        : "—";
+      statDur.textContent = durArr.length
+        ? (durArr.reduce(function (a, b) { return a + b.durationSec; }, 0) / durArr.length).toFixed(1) + "s"
+        : "—";
+      noiseDisplayEl.textContent = noiseArr.length ? formatNoiseDb(noiseArr[0].noiseDb) : "— dB";
     }
-    var noiseArr = historyEntries.filter(function (e) { return typeof e.noiseDb === "number"; });
-    var durArr = historyEntries.filter(function (e) { return typeof e.durationSec === "number"; });
-    statNoise.textContent = noiseArr.length
-      ? Math.abs(noiseArr.reduce(function (a, b) { return a + b.noiseDb; }, 0) / noiseArr.length).toFixed(1)
-      : "—";
-    statDur.textContent = durArr.length
-      ? (durArr.reduce(function (a, b) { return a + b.durationSec; }, 0) / durArr.length).toFixed(1) + "s"
-      : "—";
-    noiseDisplayEl.textContent = noiseArr.length ? formatNoiseDb(noiseArr[0].noiseDb) : "— dB";
+    refreshAccuracyChart();
   }
 
   function clearAll() {
@@ -1161,7 +1426,10 @@
   recBtn.addEventListener("click", function () { if (isRecording) stopRecording(); else startRecording(); });
   clearBtn.addEventListener("click", clearAll);
   clearAllBtn.addEventListener("click", clearAll);
-  window.addEventListener("resize", resizeCanvas);
+  window.addEventListener("resize", function () {
+    resizeCanvas();
+    redrawAccuracyChartStatic();
+  });
 
   resizeCanvas();
   drawWave();
