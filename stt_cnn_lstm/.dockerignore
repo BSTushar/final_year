@@ -1,4 +1,5 @@
 # Keep image smaller / avoid copying local junk
+.env
 venv/
 .venv/
 **/__pycache__/

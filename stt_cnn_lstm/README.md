@@ -95,10 +95,12 @@ stt_cnn_lstm/
 │   ├── evaluate.py          # standalone evaluation on CSV (WER, CER)
 │   ├── infer.py             # offline inference on WAV files
 │   ├── plots.py             # automatic plot + diagram generation
+├── services/
+│   └── stt/                 # Hybrid STT: local engine, optional cloud fallback, router
 ├── web/
-│   ├── app.py               # Flask backend + Vosk integration for robust demo
+│   ├── app.py               # Flask API: /infer_hybrid, legacy /infer, /infer_vosk
 │   ├── templates/
-│   │   └── index.html       # modern single-page UI with mic, plots, history
+│   │   └── index.html       # demo UI (mic, transcript, history, architecture flow)
 │   └── static/
 │       ├── plots/           # auto-generated training/result figures (PNG)
 │       └── diagrams/        # auto-generated system diagrams (PNG)
@@ -111,9 +113,9 @@ stt_cnn_lstm/
 
 Key points:
 
-- There is **one feature pipeline** (`src/features.py`) used consistently by training, evaluation, offline inference, and the web backend.
+- There is **one feature pipeline** (`src/features.py`) for **training, evaluation, and offline CNN–LSTM inference**; the **browser demo** uses **Vosk** plus preprocessing in `services/stt/preprocessing.py`.
 - Training and evaluation use **CSV manifests** to define the dataset, not hard-coded file lists.
-- The **Flask web app** provides a clean demo interface that reuses the same feature extraction and decoding logic; it also integrates a pretrained Vosk recognizer purely for robust demo, without changing the fact that the CNN–LSTM model is trained from scratch.
+- The **Flask web app** uses **Vosk** as the primary **offline** recognizer in the demo, with a **HybridSTTRouter** (`services/stt/`) that can optionally call a **Gemini** fallback when policy triggers (see `.env.example`). Training and evaluation remain centered on the CNN–LSTM model you train in `src/`.
 
 ---
 
@@ -210,7 +212,7 @@ The full ASR pipeline for the CNN–LSTM model is:
 
 8. **Final Text Output & Web Display**  
    - The predicted text is printed in the console for CLI scripts (`evaluate.py`, `infer.py`).
-   - The Flask app (`web/app.py`) returns JSON to the frontend, which displays the recognized text and logs it in a recent history table.
+   - The Flask app (`web/app.py`) exposes `/infer_hybrid` and returns JSON; the UI shows the transcript and a short history.
 
 Tushar should connect each step here to the corresponding modules and explain why this pipeline is appropriate for noisy speech recognition.
 
@@ -320,10 +322,7 @@ This script:
   - Data flow diagram and workflow chart.
   - Project folder hierarchy.
 
-These images are:
-
-- Saved as PNG files (easy to insert into the VTU report).
-- Automatically displayed in the web UI in a **sliding carousel** with captions, for easy explanation during the demo.
+These images are saved as PNG files for the **report and slides**. The live demo UI focuses on recording and transcription; open `web/static/plots/` and `web/static/diagrams/` when you need the figures during a presentation.
 
 Abhimanyu can connect these plots back to dataset and training behavior, while Tushar and Atiksh use them to explain architecture and results.
 
@@ -332,8 +331,9 @@ Abhimanyu can connect these plots back to dataset and training behavior, while T
 ## 10. Web Demo (How to Run & What to Show)
 
 1. **Prerequisites**
-   - At least one trained checkpoint, preferably `checkpoints/best_by_wer.pt`.
-   - Python dependencies installed: `pip install -r requirements.txt`.
+   - Vosk model files under `pretrained_models/vosk-en/` (and optional CNN–LSTM checkpoints for training/eval scripts).
+   - Python dependencies: `pip install -r requirements.txt`.
+   - Optional: copy `.env.example` → `.env` and set `STT_FALLBACK_PROVIDER` / `GEMINI_API_KEY` if you want cloud fallback (see `.env.example`).
 
 2. **Start the Flask server**
 
@@ -352,20 +352,17 @@ http://127.0.0.1:5000/
 
 4. **Using the interface**
 
-- The page shows, in one vertical flow:
-  - Microphone section with animated mic and controls.
-  - Sliding carousels for **plots** and **diagrams**.
-  - A **recent recognitions table** listing previous utterances and outputs.
+- Modern layout: hero, recording controls, transcript, optional “behind the scenes” flow, and recent history.
 - Steps:
-  - Click “Start Recording”.
-  - Speak a short English sentence.
-  - Click “Stop Recording”.
-  - The recorded audio (WebM/PCM) is converted to WAV, passed to the backend model/engine, and the transcription is shown.
+  - Choose **Offline Mode** or **Enhanced Accuracy Mode** (local first; enhanced may call cloud fallback when configured).
+  - Click **Start Recording**, speak, then **Stop Recording**.
+  - Audio is posted to **`/infer_hybrid`**; the server runs preprocessing + Vosk (and optional Gemini per router policy), then returns JSON for the UI.
 
 5. **Engines**
 
-- The **academic focus** is the CNN–LSTM model trained from scratch.
-- For a more robust general-purpose live demo, the app also integrates a **pretrained Vosk ASR engine**, which is clearly separated in the code.
+- **Demo ASR:** **Vosk** (offline, local) via `services/stt/localEngine.py`.
+- **Optional fallback:** **Gemini** when `.env` has `STT_FALLBACK_PROVIDER=gemini` and a valid key (transparent policy in `services/stt/router.py`).
+- **Research / training:** CNN–LSTM + CTC in `src/` for WER/CER experiments and checkpoints.
 
 Atiksh should handle the live demonstration, explaining what happens behind the scenes using the data flow from Section 6.
 
@@ -399,7 +396,7 @@ A suggested script that matches this repository:
      - “We also integrated a separate pretrained Vosk engine for comparison and a smoother demo, but our analysis focuses on the model we trained ourselves.”
 
 5. **Closing**
-   - “The plots and diagrams you see below summarize our dataset, training evolution, architecture, and error analysis, which we will now explain in more detail.”
+   - “Training plots and diagrams are in `web/static/plots/` and `web/static/diagrams/` for our report; the live UI shows end-to-end recognition and history.”
 
 ---
 

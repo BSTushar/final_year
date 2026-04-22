@@ -3,3 +3,4 @@ src/venv/
 __pycache__/
 *.pyc
 backup_*/
+.env
