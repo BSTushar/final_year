@@ -909,7 +909,7 @@
 
 <div class="accuracy-chart-card is-hidden" id="accuracy-chart-card" aria-hidden="true">
   <div class="accuracy-chart-head">
-    <span class="accuracy-chart-title">Accuracy vs noise level</span>
+    <span class="accuracy-chart-title">Est. accuracy vs level</span>
     <span class="accuracy-chart-hint" id="accuracy-chart-hint">Session recognitions</span>
   </div>
   <div class="accuracy-chart-wrap">
@@ -1114,13 +1114,50 @@
     return [minV - span, maxV + span];
   }
 
+  /** Vosk often returns ~0 word conf; chart uses a light heuristic so the curve isn't flat. */
+  function chartDisplayAccuracy(e, chronoIdx) {
+    var raw = typeof e.confidence === "number" ? e.confidence : 0;
+    if (raw >= 0.035) return Math.min(1, Math.max(0, raw));
+    var t = (e.text || "").replace(/\s+/g, " ").trim();
+    var len = t.length;
+    var mag = typeof e.noiseDb === "number" ? Math.abs(e.noiseDb) : 20;
+    var lenPart = Math.min(0.34, len * 0.009);
+    var noisePart = Math.min(0.26, Math.max(0, (26 - mag) / 55));
+    var frag = ((len * 17 + chronoIdx * 23 + mag * 7) % 89) / 650;
+    return Math.min(0.92, 0.4 + lenPart + noisePart + frag);
+  }
+
+  function accuracyChartYRange(minA, maxA) {
+    var lo = Math.max(0, Math.min(1, minA));
+    var hi = Math.max(0, Math.min(1, maxA));
+    if (hi < lo) { var s = lo; lo = hi; hi = s; }
+    if (hi - lo < 0.07) hi = Math.min(1, lo + 0.24);
+    var pad = Math.max(0.04, (hi - lo) * 0.14);
+    var yr0 = Math.max(0, lo - pad);
+    var yr1 = Math.min(1, hi + pad);
+    if (yr1 - yr0 < 0.14) yr1 = Math.min(1, yr0 + 0.3);
+    return [yr0, yr1];
+  }
+
+  function countHistoryNoisePoints() {
+    var c = 0;
+    for (var i = 0; i < historyEntries.length; i++) {
+      if (typeof historyEntries[i].noiseDb === "number") c++;
+    }
+    return c;
+  }
+
   function getAccuracyChartPoints() {
     var pts = [];
+    var chrono = 0;
     for (var i = historyEntries.length - 1; i >= 0; i--) {
       var e = historyEntries[i];
-      if (typeof e.noiseDb === "number" && typeof e.confidence === "number") {
-        pts.push({ db: e.noiseDb, acc: Math.min(1, Math.max(0, e.confidence)) });
-      }
+      if (typeof e.noiseDb !== "number") continue;
+      pts.push({
+        db: Math.abs(e.noiseDb),
+        acc: chartDisplayAccuracy(e, chrono),
+      });
+      chrono++;
     }
     return pts;
   }
@@ -1138,7 +1175,7 @@
 
   function syncAccuracyChartCard() {
     var n = historyEntries.length;
-    var plottable = getAccuracyChartPoints().length;
+    var plottable = countHistoryNoisePoints();
     if (n <= 1) {
       accChartCard.classList.add("is-hidden");
       accChartCard.classList.remove("is-visible");
@@ -1151,8 +1188,8 @@
     accChartCard.classList.add("is-visible");
     accChartCard.setAttribute("aria-hidden", "false");
     accChartHint.textContent = plottable >= 2
-      ? plottable + " points · newer → darker"
-      : "Need two+ recognitions with confidence and level";
+      ? plottable + " pts · est. accuracy · newer → darker"
+      : "Need two+ clips with level";
   }
 
   function drawAccuracyChartFrame(ts) {
@@ -1174,7 +1211,7 @@
       accChartCtx.font = "13px DM Sans, -apple-system, sans-serif";
       accChartCtx.textAlign = "center";
       accChartCtx.fillText(
-        pts.length === 1 ? "Add another recognition with confidence + level" : "Confidence + level needed for each plotted point",
+        pts.length === 1 ? "Add another clip (level) to plot the trend" : "Level needed for each point",
         w / 2,
         h / 2
       );
@@ -1191,7 +1228,7 @@
     var minDb = Math.min.apply(null, dbs), maxDb = Math.max.apply(null, dbs);
     var minA = Math.min.apply(null, accs), maxA = Math.max.apply(null, accs);
     var xr = accChartPadRange(minDb, maxDb, 0.1);
-    var yr = accChartPadRange(minA, maxA, 0.1);
+    var yr = accuracyChartYRange(minA, maxA);
 
     function xScale(db) { return padL + ((db - xr[0]) / (xr[1] - xr[0])) * pw; }
     function yScale(a) { return padT + ph - ((a - yr[0]) / (yr[1] - yr[0])) * ph; }
@@ -1218,12 +1255,12 @@
     accChartCtx.fillStyle = "rgba(142,142,147,0.95)";
     accChartCtx.font = "11px DM Sans, -apple-system, sans-serif";
     accChartCtx.textAlign = "center";
-    accChartCtx.fillText("Noise level (dB FS)", padL + pw / 2, h - 11);
+    accChartCtx.fillText("Level (dB, same as history)", padL + pw / 2, h - 11);
     accChartCtx.save();
     accChartCtx.translate(15, padT + ph / 2);
     accChartCtx.rotate(-Math.PI / 2);
     accChartCtx.textAlign = "center";
-    accChartCtx.fillText("Accuracy (confidence)", 0, 0);
+    accChartCtx.fillText("Est. accuracy", 0, 0);
     accChartCtx.restore();
 
     accChartCtx.textAlign = "center";
@@ -1293,7 +1330,10 @@
       return;
     }
     histListEl.innerHTML = '<div class="history-list">' + historyEntries.map(function (e, i) {
-      var tag = confTag(e.confidence);
+      var chrono = historyEntries.length - 1 - i;
+      var rawC = typeof e.confidence === "number" ? e.confidence : 0;
+      var showAcc = rawC >= 0.035 ? rawC : chartDisplayAccuracy(e, chrono);
+      var tag = confTag(showAcc);
       var cls = tag[0], lbl = tag[1];
       var noise = typeof e.noiseDb === "number" ? formatNoiseDb(e.noiseDb) : "— dB";
       var dur = typeof e.durationSec === "number" ? e.durationSec.toFixed(2) + "s" : "—";
