@@ -309,6 +309,67 @@
     color: var(--gray-500);
   }
 
+  .accent-pop {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1000;
+    width: min(360px, calc(100vw - 24px));
+    background: rgba(255, 255, 255, 0.82);
+    border: 0.5px solid rgba(229, 229, 234, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    padding: 14px 16px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(14px) scale(0.96);
+    filter: blur(0px);
+  }
+
+  .accent-pop.show {
+    animation: accentPopIn 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  .accent-pop.hide {
+    animation: accentPopOutBlur 520ms ease forwards;
+  }
+
+  .accent-pop-title {
+    font-size: 11px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .accent-pop-main {
+    font-size: 18px;
+    color: var(--gray-900);
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .accent-pop-sub {
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.35;
+  }
+
+  @keyframes accentPopIn {
+    from { opacity: 0; transform: translateY(14px) scale(0.96); filter: blur(3px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
+  }
+
+  @keyframes accentPopOutBlur {
+    from { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
+    to { opacity: 0; transform: translateY(8px) scale(0.98); filter: blur(6px); }
+  }
+
   .cursor-blink {
     display: inline-block;
     width: 2px;
@@ -563,6 +624,52 @@
 
   .history-list { display: flex; flex-direction: column; }
 
+  .history-accent-alert {
+    margin-bottom: 12px;
+    border: 0.5px solid #dbe8ff;
+    background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+    filter: blur(2px);
+    pointer-events: none;
+  }
+
+  .history-accent-alert.show {
+    animation: inlineAccentIn 280ms ease forwards;
+  }
+
+  .history-accent-alert.hide {
+    animation: inlineAccentOut 520ms ease forwards;
+  }
+
+  .history-accent-main {
+    font-size: 13px;
+    color: #1f4f8f;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .history-accent-sub {
+    font-size: 12px;
+    color: #5477a8;
+  }
+
+  @keyframes inlineAccentIn {
+    from { opacity: 0; transform: translateY(-6px) scale(0.98); filter: blur(2px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  }
+
+  @keyframes inlineAccentOut {
+    from { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    to { opacity: 0; transform: translateY(3px) scale(0.995); filter: blur(5px); }
+  }
+
   .h-row {
     display: flex;
     align-items: flex-start;
@@ -604,6 +711,7 @@
   .tag-conf-mid  { background: var(--blue-light); color: #0060c0; }
   .tag-conf-low  { background: #fff1f0; color: #c0392b; }
   .tag-noise     { background: var(--gray-100); color: var(--gray-500); }
+  .tag-country   { background: #eef6ff; color: #2f69ad; }
 
   .h-dur {
     font-size: 12px;
@@ -872,12 +980,12 @@
   </div>
 
   <div class="accent-card">
-    <div class="section-label section-label--tight">Experimental accent recognition</div>
+    <div class="section-label section-label--tight">Experimental country recognition</div>
     <div class="accent-row">
-      <div class="accent-label" id="accent-label">Unknown</div>
+      <div class="accent-label" id="accent-label">Likely country: Unknown</div>
       <div class="accent-confidence" id="accent-confidence">Confidence: —</div>
     </div>
-    <div class="accent-note" id="accent-note">Heuristic guess for demo only.</div>
+    <div class="accent-note" id="accent-note">Heuristic guess for demo only (not identity proof).</div>
   </div>
 
   <div class="controls">
@@ -931,6 +1039,10 @@
       <span class="history-title">Session history</span>
       <button type="button" class="btn-clear-all" id="clear-all-btn">Clear all</button>
     </div>
+    <div class="history-accent-alert" id="history-accent-alert" aria-live="polite">
+      <span class="history-accent-main" id="history-accent-main">Likely country: Unknown</span>
+      <span class="history-accent-sub" id="history-accent-sub">Accent: Unknown</span>
+    </div>
     <div id="history-list"><div class="history-empty">No recognitions yet</div></div>
   </div>
 
@@ -961,6 +1073,12 @@
   </div>
 </div>
 
+<div class="accent-pop" id="accent-pop" aria-live="polite">
+  <div class="accent-pop-title">Accent detector (experimental)</div>
+  <div class="accent-pop-main" id="accent-pop-main">Likely country: Unknown</div>
+  <div class="accent-pop-sub" id="accent-pop-sub">Accent: Unknown · Confidence: —</div>
+</div>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-made">Made with ♥ by</div>
@@ -983,6 +1101,12 @@
   const accentLabelEl = document.getElementById("accent-label");
   const accentConfidenceEl = document.getElementById("accent-confidence");
   const accentNoteEl = document.getElementById("accent-note");
+  const accentPopEl = document.getElementById("accent-pop");
+  const accentPopMainEl = document.getElementById("accent-pop-main");
+  const accentPopSubEl = document.getElementById("accent-pop-sub");
+  const historyAccentAlertEl = document.getElementById("history-accent-alert");
+  const historyAccentMainEl = document.getElementById("history-accent-main");
+  const historyAccentSubEl = document.getElementById("history-accent-sub");
   const histListEl = document.getElementById("history-list");
   const clearBtn = document.getElementById("clear-btn");
   const clearAllBtn = document.getElementById("clear-all-btn");
@@ -1002,6 +1126,8 @@
   var accChartAnimRaf = null;
   var accChartAnimStart = 0;
   var accChartAnimDuration = 920;
+  var accentPopHideTimer = null;
+  var historyAccentHideTimer = null;
 
   const canvas = document.getElementById("waveform");
   const ctx = canvas.getContext("2d");
@@ -1041,14 +1167,67 @@
 
   function renderAccent(accentObj) {
     var info = accentObj && typeof accentObj === "object" ? accentObj : {};
+    var country = String(info.country || "").trim() || "Unknown";
     var label = titleCaseAccentLabel(info.label || "unknown");
     var conf = typeof info.confidence === "number" && isFinite(info.confidence)
       ? (info.confidence * 100).toFixed(0) + "%"
       : "—";
     var reason = info.reason ? String(info.reason).replace(/_/g, " ") : "heuristic";
-    accentLabelEl.textContent = label;
+    accentLabelEl.textContent = "Likely country: " + country;
     accentConfidenceEl.textContent = "Confidence: " + conf;
-    accentNoteEl.textContent = "Heuristic guess for demo only (" + reason + ").";
+    accentNoteEl.textContent = "Heuristic guess for demo only (" + reason + "; accent " + label + ").";
+  }
+
+  function showAccentPopup(accentObj) {
+    var info = accentObj && typeof accentObj === "object" ? accentObj : {};
+    var country = String(info.country || "").trim() || "Unknown";
+    var label = titleCaseAccentLabel(info.label || "unknown");
+    var conf = typeof info.confidence === "number" && isFinite(info.confidence)
+      ? (info.confidence * 100).toFixed(0) + "%"
+      : "—";
+
+    accentPopMainEl.textContent = "Likely country: " + country;
+    accentPopSubEl.textContent = "Accent: " + label + " · Confidence: " + conf;
+
+    if (accentPopHideTimer) {
+      clearTimeout(accentPopHideTimer);
+      accentPopHideTimer = null;
+    }
+    accentPopEl.classList.remove("hide");
+    accentPopEl.classList.remove("show");
+    void accentPopEl.offsetWidth;
+    accentPopEl.classList.add("show");
+
+    accentPopHideTimer = setTimeout(function () {
+      accentPopEl.classList.remove("show");
+      accentPopEl.classList.add("hide");
+    }, 2600);
+  }
+
+  function showInlineHistoryAccent(accentObj) {
+    var info = accentObj && typeof accentObj === "object" ? accentObj : {};
+    var country = String(info.country || "").trim() || "Unknown";
+    var label = titleCaseAccentLabel(info.label || "unknown");
+    var conf = typeof info.confidence === "number" && isFinite(info.confidence)
+      ? (info.confidence * 100).toFixed(0) + "%"
+      : "—";
+
+    historyAccentMainEl.textContent = "Likely country: " + country;
+    historyAccentSubEl.textContent = "Accent: " + label + " · Confidence: " + conf;
+
+    if (historyAccentHideTimer) {
+      clearTimeout(historyAccentHideTimer);
+      historyAccentHideTimer = null;
+    }
+    historyAccentAlertEl.classList.remove("hide");
+    historyAccentAlertEl.classList.remove("show");
+    void historyAccentAlertEl.offsetWidth;
+    historyAccentAlertEl.classList.add("show");
+
+    historyAccentHideTimer = setTimeout(function () {
+      historyAccentAlertEl.classList.remove("show");
+      historyAccentAlertEl.classList.add("hide");
+    }, 3200);
   }
 
   function setPipeActive(idx) {
@@ -1411,9 +1590,10 @@
       var cls = tag[0], lbl = tag[1];
       var noise = typeof e.noiseDb === "number" ? formatNoiseDb(e.noiseDb) : "— dB";
       var dur = typeof e.durationSec === "number" ? e.durationSec.toFixed(2) + "s" : "—";
+      var country = String(e.country || "").trim() || "Unknown";
       return '<div class="h-row"><div class="h-idx">' + (i + 1) + '</div><div class="h-content"><div class="h-text">' +
         escapeHtml(e.text || "(empty)") + '</div><div class="h-tags"><span class="h-tag ' + cls + '">' + lbl +
-        '</span><span class="h-tag tag-noise">' + noise + '</span></div></div><div class="h-dur">' + dur + '</div></div>';
+        '</span><span class="h-tag tag-noise">' + noise + '</span><span class="h-tag tag-country">' + escapeHtml(country) + '</span></div></div><div class="h-dur">' + dur + '</div></div>';
     }).join("") + "</div>";
   }
 
@@ -1442,6 +1622,10 @@
     transcriptEl.className = "transcript-text empty";
     transcriptEl.textContent = "Start recording to begin…";
     renderAccent({ label: "unknown", confidence: null, reason: "idle" });
+    accentPopEl.classList.remove("show", "hide");
+    historyAccentAlertEl.classList.remove("show", "hide");
+    historyAccentMainEl.textContent = "Likely country: Unknown";
+    historyAccentSubEl.textContent = "Accent: Unknown";
     statusEl.textContent = "Idle";
     pipelineCard.classList.remove("show");
     resetPipeStates();
@@ -1526,7 +1710,8 @@
         text: resultText,
         noiseDb: typeof data.noise_db === "number" ? data.noise_db : null,
         confidence: typeof data.confidence === "number" && isFinite(data.confidence) ? data.confidence : null,
-        durationSec: typeof data.duration_sec === "number" ? data.duration_sec : null
+        durationSec: typeof data.duration_sec === "number" ? data.duration_sec : null,
+        country: data.metadata && data.metadata.accent_experimental ? data.metadata.accent_experimental.country : "Unknown"
       };
 
       await finishPipeline(true);
@@ -1535,6 +1720,8 @@
       transcriptEl.className = data.transcription ? "transcript-text" : "transcript-text empty";
       transcriptEl.textContent = resultText;
       renderAccent(data.metadata && data.metadata.accent_experimental ? data.metadata.accent_experimental : null);
+      showAccentPopup(data.metadata && data.metadata.accent_experimental ? data.metadata.accent_experimental : null);
+      showInlineHistoryAccent(data.metadata && data.metadata.accent_experimental ? data.metadata.accent_experimental : null);
 
       historyEntries.unshift(resultEntry);
       if (historyEntries.length > 10) historyEntries.pop();

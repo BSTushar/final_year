@@ -41,6 +41,13 @@ ACCENT_RULES = [
     ("british_english", {"mate", "cheers", "bloody", "flat", "lorry", "biscuit", "holiday", "petrol"}),
     ("american_english", {"awesome", "gonna", "wanna", "guys", "apartment", "truck", "cookie", "gas"}),
 ]
+ACCENT_COUNTRY_MAP = {
+    "indian_english": "India",
+    "british_english": "United Kingdom",
+    "american_english": "United States",
+    "neutral_english": "Unknown",
+    "unknown": "Unknown",
+}
 
 
 def _is_english_text(text: str) -> bool:
@@ -69,11 +76,21 @@ def _apply_english_guard(payload: dict) -> dict:
 def _detect_experimental_accent(transcription: str) -> Dict[str, object]:
     text = (transcription or "").strip().lower()
     if not text:
-        return {"label": "unknown", "confidence": 0.0, "reason": "empty_transcription"}
+        return {
+            "label": "unknown",
+            "country": "Unknown",
+            "confidence": 0.0,
+            "reason": "empty_transcription",
+        }
 
     words = WORD_RE.findall(text)
     if not words:
-        return {"label": "unknown", "confidence": 0.0, "reason": "no_alpha_tokens"}
+        return {
+            "label": "unknown",
+            "country": "Unknown",
+            "confidence": 0.0,
+            "reason": "no_alpha_tokens",
+        }
 
     scores: Dict[str, int] = {label: 0 for label, _ in ACCENT_RULES}
     for word in words:
@@ -94,14 +111,24 @@ def _detect_experimental_accent(transcription: str) -> Dict[str, object]:
             second_hits = hits
 
     if best_hits == 0:
-        return {"label": "neutral_english", "confidence": 0.2, "reason": "no_marker_words"}
+        return {
+            "label": "neutral_english",
+            "country": ACCENT_COUNTRY_MAP["neutral_english"],
+            "confidence": 0.2,
+            "reason": "no_marker_words",
+        }
 
     # Confidence is intentionally conservative because this is a lexical heuristic.
     total_hits = sum(scores.values())
     margin = best_hits - second_hits
     confidence = min(0.85, 0.35 + (best_hits * 0.12) + (margin * 0.08) + (0.03 if total_hits >= 2 else 0))
     confidence = round(max(0.0, confidence), 2)
-    return {"label": best_label, "confidence": confidence, "reason": "marker_word_heuristic"}
+    return {
+        "label": best_label,
+        "country": ACCENT_COUNTRY_MAP.get(best_label, "Unknown"),
+        "confidence": confidence,
+        "reason": "marker_word_heuristic",
+    }
 
 
 def _response_from_result(result):
