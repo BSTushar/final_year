@@ -274,6 +274,41 @@
     font-weight: 300;
   }
 
+  .accent-card {
+    background: var(--gray-50);
+    border: 0.5px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: 16px var(--card-pad);
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .accent-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .accent-label {
+    font-size: 18px;
+    color: var(--gray-900);
+    letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+
+  .accent-confidence {
+    font-size: 13px;
+    color: var(--gray-500);
+  }
+
+  .accent-note {
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+
   .cursor-blink {
     display: inline-block;
     width: 2px;
@@ -836,6 +871,15 @@
     <div class="transcript-text empty" id="transcript-text">Start recording to begin…</div>
   </div>
 
+  <div class="accent-card">
+    <div class="section-label section-label--tight">Experimental accent recognition</div>
+    <div class="accent-row">
+      <div class="accent-label" id="accent-label">Unknown</div>
+      <div class="accent-confidence" id="accent-confidence">Confidence: —</div>
+    </div>
+    <div class="accent-note" id="accent-note">Heuristic guess for demo only.</div>
+  </div>
+
   <div class="controls">
     <div class="controls-actions">
       <button type="button" class="btn-record" id="rec-btn">
@@ -936,6 +980,9 @@
   const recInd = document.getElementById("rec-ind");
   const statusEl = document.getElementById("status");
   const transcriptEl = document.getElementById("transcript-text");
+  const accentLabelEl = document.getElementById("accent-label");
+  const accentConfidenceEl = document.getElementById("accent-confidence");
+  const accentNoteEl = document.getElementById("accent-note");
   const histListEl = document.getElementById("history-list");
   const clearBtn = document.getElementById("clear-btn");
   const clearAllBtn = document.getElementById("clear-all-btn");
@@ -974,8 +1021,35 @@
       .replace(/"/g, "&quot;");
   }
 
+  var EN_ONLY_WARNING = "Please try in English only. Other languages are future scope.";
+  var ENGLISH_TEXT_RE = /^[A-Za-z0-9\s.,!?;:'"()\-[\]{}_/&%$@#*+=<>`~]*$/;
+
+  function isEnglishText(text) {
+    var normalized = String(text || "").trim();
+    if (!normalized) return true;
+    return ENGLISH_TEXT_RE.test(normalized);
+  }
+
   function clearPipeTimers() { pipeTimers.forEach(clearTimeout); pipeTimers = []; }
   function resetPipeStates() { pipeSteps.forEach(function (s) { s.classList.remove("is-active", "is-done", "is-error"); }); }
+
+  function titleCaseAccentLabel(label) {
+    var raw = String(label || "unknown").replace(/_/g, " ").trim();
+    if (!raw) return "Unknown";
+    return raw.replace(/\b[a-z]/g, function (m) { return m.toUpperCase(); });
+  }
+
+  function renderAccent(accentObj) {
+    var info = accentObj && typeof accentObj === "object" ? accentObj : {};
+    var label = titleCaseAccentLabel(info.label || "unknown");
+    var conf = typeof info.confidence === "number" && isFinite(info.confidence)
+      ? (info.confidence * 100).toFixed(0) + "%"
+      : "—";
+    var reason = info.reason ? String(info.reason).replace(/_/g, " ") : "heuristic";
+    accentLabelEl.textContent = label;
+    accentConfidenceEl.textContent = "Confidence: " + conf;
+    accentNoteEl.textContent = "Heuristic guess for demo only (" + reason + ").";
+  }
 
   function setPipeActive(idx) {
     pipeSteps.forEach(function (s, i) {
@@ -1367,6 +1441,7 @@
     historyEntries.length = 0;
     transcriptEl.className = "transcript-text empty";
     transcriptEl.textContent = "Start recording to begin…";
+    renderAccent({ label: "unknown", confidence: null, reason: "idle" });
     statusEl.textContent = "Idle";
     pipelineCard.classList.remove("show");
     resetPipeStates();
@@ -1430,11 +1505,19 @@
       var res = await fetch("/infer_hybrid", { method: "POST", body: fd });
       var data = await res.json();
 
+      if (data.transcription && !isEnglishText(data.transcription)) {
+        data.transcription = "";
+        data.warning = data.warning ? (data.warning + " | " + EN_ONLY_WARNING) : EN_ONLY_WARNING;
+        if (!data.metadata || typeof data.metadata !== "object") data.metadata = {};
+        data.metadata.language_guard = "blocked_non_english_transcription_ui";
+      }
+
       if (data.error) {
         await finishPipeline(false);
         statusEl.textContent = "Error: " + data.error;
         transcriptEl.className = "transcript-text empty";
         transcriptEl.textContent = "";
+        renderAccent({ label: "unknown", confidence: null, reason: "error" });
         return;
       }
 
@@ -1451,6 +1534,7 @@
       statusEl.textContent = data.warning ? "Warning: " + data.warning : "Done";
       transcriptEl.className = data.transcription ? "transcript-text" : "transcript-text empty";
       transcriptEl.textContent = resultText;
+      renderAccent(data.metadata && data.metadata.accent_experimental ? data.metadata.accent_experimental : null);
 
       historyEntries.unshift(resultEntry);
       if (historyEntries.length > 10) historyEntries.pop();
